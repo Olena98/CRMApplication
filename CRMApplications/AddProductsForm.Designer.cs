@@ -34,7 +34,7 @@ namespace CRMApplications
             this.productPrice = new System.Windows.Forms.TextBox();
             this.productDescription = new System.Windows.Forms.TextBox();
             this.productExistence = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.productCreate = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -82,15 +82,16 @@ namespace CRMApplications
             this.productExistence.TabIndex = 4;
             this.productExistence.TextChanged += new System.EventHandler(this.productExistence_TextChanged);
             // 
-            // button1
+            // productCreate
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(135, 299);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 33);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Create";
-            this.button1.UseVisualStyleBackColor = true;
+            this.productCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.productCreate.Location = new System.Drawing.Point(135, 299);
+            this.productCreate.Name = "productCreate";
+            this.productCreate.Size = new System.Drawing.Size(93, 33);
+            this.productCreate.TabIndex = 5;
+            this.productCreate.Text = "Create";
+            this.productCreate.UseVisualStyleBackColor = true;
+            this.productCreate.Click += new System.EventHandler(this.productCreate_Click);
             // 
             // label1
             // 
@@ -155,7 +156,7 @@ namespace CRMApplications
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.productCreate);
             this.Controls.Add(this.productExistence);
             this.Controls.Add(this.productDescription);
             this.Controls.Add(this.productPrice);
@@ -176,7 +177,7 @@ namespace CRMApplications
         private System.Windows.Forms.TextBox productPrice;
         private System.Windows.Forms.TextBox productDescription;
         private System.Windows.Forms.TextBox productExistence;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button productCreate;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
