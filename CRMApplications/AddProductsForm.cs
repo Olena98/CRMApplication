@@ -19,11 +19,12 @@ namespace CRMApplications
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-
+            decimal price = decimal.Parse(productPrice.Text);
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
+            int number = int.Parse(productNumber.Text);
 
         }
 
@@ -52,6 +53,16 @@ namespace CRMApplications
             string name = productName.Text.ToString();
             
             
+        }
+
+        private void productDescription_TextChanged(object sender, EventArgs e)
+        {
+            string description = productDescription.Text.ToString();
+        }
+
+        private void productExistence_TextChanged(object sender, EventArgs e)
+        {
+            bool existence = bool.Parse(productExistence.Text);
         }
     }
 }

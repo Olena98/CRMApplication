@@ -30,10 +30,10 @@ namespace CRMApplications
         private void InitializeComponent()
         {
             this.productName = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.productNumber = new System.Windows.Forms.TextBox();
             this.productPrice = new System.Windows.Forms.TextBox();
             this.productDescription = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.productExistence = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,13 +50,13 @@ namespace CRMApplications
             this.productName.TabIndex = 0;
             this.productName.TextChanged += new System.EventHandler(this.productName_TextChanged);
             // 
-            // textBox2
+            // productNumber
             // 
-            this.textBox2.Location = new System.Drawing.Point(135, 174);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(196, 20);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.productNumber.Location = new System.Drawing.Point(135, 174);
+            this.productNumber.Name = "productNumber";
+            this.productNumber.Size = new System.Drawing.Size(196, 20);
+            this.productNumber.TabIndex = 1;
+            this.productNumber.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // productPrice
             // 
@@ -74,12 +74,13 @@ namespace CRMApplications
             this.productDescription.TabIndex = 3;
             this.productDescription.TextChanged += new System.EventHandler(this.productDescription_TextChanged);
             // 
-            // textBox5
+            // productExistence
             // 
-            this.textBox5.Location = new System.Drawing.Point(135, 219);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(196, 20);
-            this.textBox5.TabIndex = 4;
+            this.productExistence.Location = new System.Drawing.Point(135, 219);
+            this.productExistence.Name = "productExistence";
+            this.productExistence.Size = new System.Drawing.Size(196, 20);
+            this.productExistence.TabIndex = 4;
+            this.productExistence.TextChanged += new System.EventHandler(this.productExistence_TextChanged);
             // 
             // button1
             // 
@@ -155,10 +156,10 @@ namespace CRMApplications
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.productExistence);
             this.Controls.Add(this.productDescription);
             this.Controls.Add(this.productPrice);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.productNumber);
             this.Controls.Add(this.productName);
             this.Name = "AddProductsForm";
             this.Text = "AddProductsForm";
@@ -171,10 +172,10 @@ namespace CRMApplications
         #endregion
 
         private System.Windows.Forms.TextBox productName;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox productNumber;
         private System.Windows.Forms.TextBox productPrice;
         private System.Windows.Forms.TextBox productDescription;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox productExistence;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
