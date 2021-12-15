@@ -15,6 +15,22 @@ namespace CRMApplications
         public Form1()
         {
             InitializeComponent();
+
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked) 
+            {
+                AddProductsForm addProductsForm = new AddProductsForm();
+                addProductsForm.Show();
+                this.Visible = false;
+            }
+        }
+
+        private void radioButton1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

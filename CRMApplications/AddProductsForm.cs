@@ -46,5 +46,12 @@ namespace CRMApplications
         {
 
         }
+
+        private void productName_TextChanged(object sender, EventArgs e)
+        {
+            string name = productName.Text.ToString();
+            
+            
+        }
     }
 }
