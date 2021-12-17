@@ -29,94 +29,126 @@ namespace CRMApplications
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.productsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createNewOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchOrdersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // menuStrip1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(373, 375);
-            this.tabControl1.TabIndex = 0;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.productsToolStripMenuItem,
+            this.clientsToolStripMenuItem,
+            this.ordersToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(374, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // tabPage1
+            // productsToolStripMenuItem
             // 
-            this.tabPage1.Controls.Add(this.radioButton2);
-            this.tabPage1.Controls.Add(this.radioButton1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 34);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(365, 337);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Products";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.productsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createProductToolStripMenuItem,
+            this.searchProductToolStripMenuItem});
+            this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
+            this.productsToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.productsToolStripMenuItem.Text = "Products";
             // 
-            // radioButton2
+            // createProductToolStripMenuItem
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(34, 100);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(173, 29);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Search products";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.createProductToolStripMenuItem.Checked = true;
+            this.createProductToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.createProductToolStripMenuItem.Name = "createProductToolStripMenuItem";
+            this.createProductToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.createProductToolStripMenuItem.Text = "Create product";
+            this.createProductToolStripMenuItem.Click += new System.EventHandler(this.createProductToolStripMenuItem_Click);
             // 
-            // radioButton1
+            // searchProductToolStripMenuItem
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(34, 46);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(210, 29);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Create new products";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
-            this.radioButton1.Click += new System.EventHandler(this.radioButton1_Click);
+            this.searchProductToolStripMenuItem.Name = "searchProductToolStripMenuItem";
+            this.searchProductToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.searchProductToolStripMenuItem.Text = "Search product";
             // 
-            // tabPage2
+            // clientsToolStripMenuItem
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 34);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(365, 337);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Clients";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.clientsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addNewClientToolStripMenuItem,
+            this.searchClientToolStripMenuItem});
+            this.clientsToolStripMenuItem.Name = "clientsToolStripMenuItem";
+            this.clientsToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.clientsToolStripMenuItem.Text = "Clients";
+            // 
+            // ordersToolStripMenuItem
+            // 
+            this.ordersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createNewOrderToolStripMenuItem,
+            this.searchOrdersToolStripMenuItem});
+            this.ordersToolStripMenuItem.Name = "ordersToolStripMenuItem";
+            this.ordersToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.ordersToolStripMenuItem.Text = "Orders";
+            // 
+            // addNewClientToolStripMenuItem
+            // 
+            this.addNewClientToolStripMenuItem.Name = "addNewClientToolStripMenuItem";
+            this.addNewClientToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addNewClientToolStripMenuItem.Text = "Add new client";
+            // 
+            // searchClientToolStripMenuItem
+            // 
+            this.searchClientToolStripMenuItem.Name = "searchClientToolStripMenuItem";
+            this.searchClientToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.searchClientToolStripMenuItem.Text = "Search client";
+            // 
+            // createNewOrderToolStripMenuItem
+            // 
+            this.createNewOrderToolStripMenuItem.Name = "createNewOrderToolStripMenuItem";
+            this.createNewOrderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.createNewOrderToolStripMenuItem.Text = "Create new order";
+            // 
+            // searchOrdersToolStripMenuItem
+            // 
+            this.searchOrdersToolStripMenuItem.Name = "searchOrdersToolStripMenuItem";
+            this.searchOrdersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.searchOrdersToolStripMenuItem.Text = "Search orders";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(374, 387);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem productsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createProductToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem searchProductToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clientsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ordersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addNewClientToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem searchClientToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createNewOrderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem searchOrdersToolStripMenuItem;
     }
 }
 

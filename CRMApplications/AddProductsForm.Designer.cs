@@ -48,7 +48,7 @@ namespace CRMApplications
             this.productName.Name = "productName";
             this.productName.Size = new System.Drawing.Size(196, 20);
             this.productName.TabIndex = 0;
-            this.productName.TextChanged += new System.EventHandler(this.productName_TextChanged);
+            
             // 
             // productNumber
             // 
@@ -56,7 +56,7 @@ namespace CRMApplications
             this.productNumber.Name = "productNumber";
             this.productNumber.Size = new System.Drawing.Size(196, 20);
             this.productNumber.TabIndex = 1;
-            this.productNumber.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+           
             // 
             // productPrice
             // 
@@ -64,7 +64,7 @@ namespace CRMApplications
             this.productPrice.Name = "productPrice";
             this.productPrice.Size = new System.Drawing.Size(196, 20);
             this.productPrice.TabIndex = 2;
-            this.productPrice.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+           
             // 
             // productDescription
             // 
@@ -72,7 +72,7 @@ namespace CRMApplications
             this.productDescription.Name = "productDescription";
             this.productDescription.Size = new System.Drawing.Size(196, 20);
             this.productDescription.TabIndex = 3;
-            this.productDescription.TextChanged += new System.EventHandler(this.productDescription_TextChanged);
+           
             // 
             // productExistence
             // 
@@ -80,7 +80,7 @@ namespace CRMApplications
             this.productExistence.Name = "productExistence";
             this.productExistence.Size = new System.Drawing.Size(196, 20);
             this.productExistence.TabIndex = 4;
-            this.productExistence.TextChanged += new System.EventHandler(this.productExistence_TextChanged);
+           
             // 
             // productCreate
             // 
@@ -112,7 +112,7 @@ namespace CRMApplications
             this.label2.Size = new System.Drawing.Size(79, 17);
             this.label2.TabIndex = 7;
             this.label2.Text = "Description";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+          
             // 
             // label3
             // 
@@ -123,7 +123,7 @@ namespace CRMApplications
             this.label3.Size = new System.Drawing.Size(40, 17);
             this.label3.TabIndex = 8;
             this.label3.Text = "Price";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            
             // 
             // label4
             // 
@@ -134,8 +134,7 @@ namespace CRMApplications
             this.label4.Size = new System.Drawing.Size(109, 17);
             this.label4.TabIndex = 9;
             this.label4.Text = "Product number";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
+           
             // label5
             // 
             this.label5.AutoSize = true;
@@ -150,7 +149,7 @@ namespace CRMApplications
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(346, 403);
+            this.ClientSize = new System.Drawing.Size(337, 346);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -164,7 +163,7 @@ namespace CRMApplications
             this.Controls.Add(this.productName);
             this.Name = "AddProductsForm";
             this.Text = "AddProductsForm";
-            this.Load += new System.EventHandler(this.AddProductsForm_Load);
+           
             this.ResumeLayout(false);
             this.PerformLayout();
 
