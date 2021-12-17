@@ -15,7 +15,6 @@ namespace CRMApplications
         public Form1()
         {
             InitializeComponent();
-
         }
 
         private void createProductToolStripMenuItem_Click(object sender, EventArgs e)
@@ -26,6 +25,17 @@ namespace CRMApplications
                 
                 addProductsForm.MdiParent = this;
                 addProductsForm.Show();
+            }
+        }
+
+        private void searchProductToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (searchProductToolStripMenuItem.Checked) 
+            {
+                SearchProductForm searchProductForm = new SearchProductForm();
+              
+                searchProductForm.MdiParent = this;
+                searchProductForm.Show();
             }
         }
     }

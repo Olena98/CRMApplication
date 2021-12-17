@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddClientsForm.cs">
+    <Compile Include="SearchProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddClientsForm.Designer.cs">
-      <DependentUpon>AddClientsForm.cs</DependentUpon>
+    <Compile Include="SearchProductForm.Designer.cs">
+      <DependentUpon>SearchProductForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AddProductsForm.cs">
       <SubType>Form</SubType>
@@ -66,8 +66,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AddClientsForm.resx">
-      <DependentUpon>AddClientsForm.cs</DependentUpon>
+    <EmbeddedResource Include="SearchProductForm.resx">
+      <DependentUpon>SearchProductForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddProductsForm.resx">
       <DependentUpon>AddProductsForm.cs</DependentUpon>

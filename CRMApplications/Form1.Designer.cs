@@ -74,9 +74,11 @@ namespace CRMApplications
             // 
             // searchProductToolStripMenuItem
             // 
+            this.searchProductToolStripMenuItem.CheckOnClick = true;
             this.searchProductToolStripMenuItem.Name = "searchProductToolStripMenuItem";
             this.searchProductToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.searchProductToolStripMenuItem.Text = "Search product";
+            this.searchProductToolStripMenuItem.Click += new System.EventHandler(this.searchProductToolStripMenuItem_Click);
             // 
             // clientsToolStripMenuItem
             // 
