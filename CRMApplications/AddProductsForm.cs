@@ -22,18 +22,35 @@ namespace CRMApplications
 
         private void productCreate_Click(object sender, EventArgs e)
         {
-            var products = new AddProductsForm();
-            List<AddProductsForm> Product = new List<AddProductsForm>();
+            var products = new Product();
+            products.ProductName = productName.Text;
+            products.Description = productDescription.Text;
+            decimal price;
+            while (!decimal.TryParse(productPrice.Text, out price))
+            {
+              MessageBox.Show("Incorrect input. Please try again");
+            }
+            products.Price = price;
+            int number;
+            while(!int.TryParse(productNumber.Text, out number)) 
+            {
+               MessageBox.Show("Incorrect input. Please try again");
+            }
+            products.ProductNumber = number;
+            bool existence;
+            while (!bool.TryParse(Console.ReadLine(), out existence))
+            {
+                MessageBox.Show("Incorrect input. Please try again");
+            }
+            products.Existence = existence;
+            MessageBox.Show("Products guid id: ");
+            products.Id = Guid.NewGuid();
+            MessageBox.Show(products.Id.ToString());
 
-            string name = productName.Text;
-            string description = productDescription.Text;
-            int number = int.Parse(productNumber.Text);
-            decimal price = decimal.Parse(productPrice.Text);
-            bool existence = bool.Parse(productExistence.Text);
-            Product.Add(products);
+
             foreach (AddProductsForm a in Products)
             {
-                MessageBox.Show("Name: " + name + "Description: " + description + " Number: " + number + "Price: " + price + "Existence: " + existence);
+                MessageBox.Show("Name: " + ProductName + "Description: " + " Number: " + number + "Price: " + price + "Existence: " + existence);
                 MessageBox.Show(a.ToString());
             }
 
