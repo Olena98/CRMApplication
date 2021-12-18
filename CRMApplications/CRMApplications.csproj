@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Product.cs" />
+    <Compile Include="ProductsDataBase.cs" />
+    <Compile Include="ProductService.cs" />
     <Compile Include="SearchProductForm.cs">
       <SubType>Form</SubType>
     </Compile>

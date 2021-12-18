@@ -13,52 +13,45 @@ namespace CRMApplications
 {
     public partial class AddProductsForm : Form
     {
-        List<AddProductsForm> Products { get; set; }
+       
         public AddProductsForm()
                 
         {
             InitializeComponent();
         }
 
-        private void productCreate_Click(object sender, EventArgs e)
+        public void productCreate_Click(object sender, EventArgs e)
         {
             var products = new Product();
             products.ProductName = productName.Text;
-            products.Description = productDescription.Text;
+            products.ProductDescription = productDescription.Text;
             decimal price;
-            while (!decimal.TryParse(productPrice.Text, out price))
+            if (!decimal.TryParse(productPrice.Text, out price))
             {
               MessageBox.Show("Incorrect input. Please try again");
             }
             products.Price = price;
             int number;
-            while(!int.TryParse(productNumber.Text, out number)) 
+            if(!int.TryParse(productNumber.Text, out number)) 
             {
                MessageBox.Show("Incorrect input. Please try again");
             }
             products.ProductNumber = number;
             bool existence;
-            while (!bool.TryParse(Console.ReadLine(), out existence))
+            if (!bool.TryParse(Console.ReadLine(), out existence))
             {
                 MessageBox.Show("Incorrect input. Please try again");
             }
             products.Existence = existence;
-            MessageBox.Show("Products guid id: ");
+            MessageBox.Show("Products guid id: " + products.Id.ToString());
             products.Id = Guid.NewGuid();
-            MessageBox.Show(products.Id.ToString());
-
-
-            foreach (AddProductsForm a in Products)
-            {
-                MessageBox.Show("Name: " + ProductName + "Description: " + " Number: " + number + "Price: " + price + "Existence: " + existence);
-                MessageBox.Show(a.ToString());
-            }
-
            
+            ProductService.AddNewProduct(products);
+                                           
         }
        
-        
-      
+
+
 
     }
 

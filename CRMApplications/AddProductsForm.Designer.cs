@@ -30,8 +30,6 @@ namespace CRMApplications
         private void InitializeComponent()
         {
             this.productName = new System.Windows.Forms.TextBox();
-            this.productNumber = new System.Windows.Forms.TextBox();
-            this.productPrice = new System.Windows.Forms.TextBox();
             this.productDescription = new System.Windows.Forms.TextBox();
             this.productExistence = new System.Windows.Forms.TextBox();
             this.productCreate = new System.Windows.Forms.Button();
@@ -40,6 +38,8 @@ namespace CRMApplications
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.productPrice = new System.Windows.Forms.MaskedTextBox();
+            this.productNumber = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // productName
@@ -48,23 +48,6 @@ namespace CRMApplications
             this.productName.Name = "productName";
             this.productName.Size = new System.Drawing.Size(196, 20);
             this.productName.TabIndex = 0;
-            
-            // 
-            // productNumber
-            // 
-            this.productNumber.Location = new System.Drawing.Point(135, 174);
-            this.productNumber.Name = "productNumber";
-            this.productNumber.Size = new System.Drawing.Size(196, 20);
-            this.productNumber.TabIndex = 1;
-           
-            // 
-            // productPrice
-            // 
-            this.productPrice.Location = new System.Drawing.Point(135, 126);
-            this.productPrice.Name = "productPrice";
-            this.productPrice.Size = new System.Drawing.Size(196, 20);
-            this.productPrice.TabIndex = 2;
-           
             // 
             // productDescription
             // 
@@ -72,7 +55,6 @@ namespace CRMApplications
             this.productDescription.Name = "productDescription";
             this.productDescription.Size = new System.Drawing.Size(196, 20);
             this.productDescription.TabIndex = 3;
-           
             // 
             // productExistence
             // 
@@ -80,7 +62,6 @@ namespace CRMApplications
             this.productExistence.Name = "productExistence";
             this.productExistence.Size = new System.Drawing.Size(196, 20);
             this.productExistence.TabIndex = 4;
-           
             // 
             // productCreate
             // 
@@ -112,7 +93,6 @@ namespace CRMApplications
             this.label2.Size = new System.Drawing.Size(79, 17);
             this.label2.TabIndex = 7;
             this.label2.Text = "Description";
-          
             // 
             // label3
             // 
@@ -123,7 +103,6 @@ namespace CRMApplications
             this.label3.Size = new System.Drawing.Size(40, 17);
             this.label3.TabIndex = 8;
             this.label3.Text = "Price";
-            
             // 
             // label4
             // 
@@ -134,7 +113,7 @@ namespace CRMApplications
             this.label4.Size = new System.Drawing.Size(109, 17);
             this.label4.TabIndex = 9;
             this.label4.Text = "Product number";
-           
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -145,11 +124,27 @@ namespace CRMApplications
             this.label5.TabIndex = 10;
             this.label5.Text = "Existence";
             // 
+            // productPrice
+            // 
+            this.productPrice.Location = new System.Drawing.Point(135, 126);
+            this.productPrice.Name = "productPrice";
+            this.productPrice.Size = new System.Drawing.Size(196, 20);
+            this.productPrice.TabIndex = 11;
+            // 
+            // productNumber
+            // 
+            this.productNumber.Location = new System.Drawing.Point(136, 174);
+            this.productNumber.Name = "productNumber";
+            this.productNumber.Size = new System.Drawing.Size(195, 20);
+            this.productNumber.TabIndex = 12;
+            // 
             // AddProductsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(337, 346);
+            this.Controls.Add(this.productNumber);
+            this.Controls.Add(this.productPrice);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -158,12 +153,9 @@ namespace CRMApplications
             this.Controls.Add(this.productCreate);
             this.Controls.Add(this.productExistence);
             this.Controls.Add(this.productDescription);
-            this.Controls.Add(this.productPrice);
-            this.Controls.Add(this.productNumber);
             this.Controls.Add(this.productName);
             this.Name = "AddProductsForm";
             this.Text = "AddProductsForm";
-           
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,8 +164,6 @@ namespace CRMApplications
         #endregion
 
         private System.Windows.Forms.TextBox productName;
-        private System.Windows.Forms.TextBox productNumber;
-        private System.Windows.Forms.TextBox productPrice;
         private System.Windows.Forms.TextBox productDescription;
         private System.Windows.Forms.TextBox productExistence;
         private System.Windows.Forms.Button productCreate;
@@ -182,5 +172,7 @@ namespace CRMApplications
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.MaskedTextBox productPrice;
+        private System.Windows.Forms.MaskedTextBox productNumber;
     }
 }
