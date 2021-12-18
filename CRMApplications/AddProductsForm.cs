@@ -13,7 +13,7 @@ namespace CRMApplications
 {
     public partial class AddProductsForm : Form
     {
-        
+        List<AddProductsForm> Products { get; set; }
         public AddProductsForm()
                 
         {
@@ -31,7 +31,7 @@ namespace CRMApplications
             decimal price = decimal.Parse(productPrice.Text);
             bool existence = bool.Parse(productExistence.Text);
             Product.Add(products);
-            foreach (AddProductsForm a in Product)
+            foreach (AddProductsForm a in Products)
             {
                 MessageBox.Show("Name: " + name + "Description: " + description + " Number: " + number + "Price: " + price + "Existence: " + existence);
                 MessageBox.Show(a.ToString());

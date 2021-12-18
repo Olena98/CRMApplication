@@ -21,9 +21,8 @@ namespace CRMApplications
         {
             if (createProductToolStripMenuItem.Checked) 
             {
-                AddProductsForm addProductsForm = new AddProductsForm();
-                
-                addProductsForm.MdiParent = this;
+                AddProductsForm addProductsForm = new AddProductsForm();            
+                addProductsForm.MdiParent = this;               
                 addProductsForm.Show();
             }
         }
@@ -33,8 +32,8 @@ namespace CRMApplications
             if (searchProductToolStripMenuItem.Checked) 
             {
                 SearchProductForm searchProductForm = new SearchProductForm();
-              
-                searchProductForm.MdiParent = this;
+                searchProductForm.MdiParent = this.MdiParent;
+                Visible = false;
                 searchProductForm.Show();
             }
         }

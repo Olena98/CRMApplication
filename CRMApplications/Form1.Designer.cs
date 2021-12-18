@@ -34,9 +34,9 @@ namespace CRMApplications
             this.createProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ordersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createNewOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchOrdersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -50,7 +50,7 @@ namespace CRMApplications
             this.ordersToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(374, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(406, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -68,7 +68,7 @@ namespace CRMApplications
             this.createProductToolStripMenuItem.Checked = true;
             this.createProductToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.createProductToolStripMenuItem.Name = "createProductToolStripMenuItem";
-            this.createProductToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.createProductToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.createProductToolStripMenuItem.Text = "Create product";
             this.createProductToolStripMenuItem.Click += new System.EventHandler(this.createProductToolStripMenuItem_Click);
             // 
@@ -76,7 +76,7 @@ namespace CRMApplications
             // 
             this.searchProductToolStripMenuItem.CheckOnClick = true;
             this.searchProductToolStripMenuItem.Name = "searchProductToolStripMenuItem";
-            this.searchProductToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.searchProductToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.searchProductToolStripMenuItem.Text = "Search product";
             this.searchProductToolStripMenuItem.Click += new System.EventHandler(this.searchProductToolStripMenuItem_Click);
             // 
@@ -89,6 +89,18 @@ namespace CRMApplications
             this.clientsToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.clientsToolStripMenuItem.Text = "Clients";
             // 
+            // addNewClientToolStripMenuItem
+            // 
+            this.addNewClientToolStripMenuItem.Name = "addNewClientToolStripMenuItem";
+            this.addNewClientToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.addNewClientToolStripMenuItem.Text = "Add new client";
+            // 
+            // searchClientToolStripMenuItem
+            // 
+            this.searchClientToolStripMenuItem.Name = "searchClientToolStripMenuItem";
+            this.searchClientToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.searchClientToolStripMenuItem.Text = "Search client";
+            // 
             // ordersToolStripMenuItem
             // 
             this.ordersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -98,35 +110,23 @@ namespace CRMApplications
             this.ordersToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.ordersToolStripMenuItem.Text = "Orders";
             // 
-            // addNewClientToolStripMenuItem
-            // 
-            this.addNewClientToolStripMenuItem.Name = "addNewClientToolStripMenuItem";
-            this.addNewClientToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.addNewClientToolStripMenuItem.Text = "Add new client";
-            // 
-            // searchClientToolStripMenuItem
-            // 
-            this.searchClientToolStripMenuItem.Name = "searchClientToolStripMenuItem";
-            this.searchClientToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.searchClientToolStripMenuItem.Text = "Search client";
-            // 
             // createNewOrderToolStripMenuItem
             // 
             this.createNewOrderToolStripMenuItem.Name = "createNewOrderToolStripMenuItem";
-            this.createNewOrderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.createNewOrderToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.createNewOrderToolStripMenuItem.Text = "Create new order";
             // 
             // searchOrdersToolStripMenuItem
             // 
             this.searchOrdersToolStripMenuItem.Name = "searchOrdersToolStripMenuItem";
-            this.searchOrdersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.searchOrdersToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.searchOrdersToolStripMenuItem.Text = "Search orders";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(374, 387);
+            this.ClientSize = new System.Drawing.Size(406, 439);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
