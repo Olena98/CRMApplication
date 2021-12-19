@@ -18,10 +18,11 @@ namespace CRMApplications
         }
      
         private void createProductToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            AddProductsForm addProductsForm = new AddProductsForm();         
-            addProductsForm.MdiParent = this;
-            addProductsForm.Show();          
+        {            
+                AddProductsForm addProductsForm = new AddProductsForm();
+                addProductsForm.MdiParent = this;
+                addProductsForm.Show();
+            
         }
 
         private void searchProductToolStripMenuItem_Click_1(object sender, EventArgs e)

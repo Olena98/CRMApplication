@@ -9,11 +9,11 @@ namespace CRMApplications
     class ProductService
 
     {
+        private static List<Product> Products = new List<Product>();
+
         public static void AddNewProduct(Product products)
         {
-            ProductsDataBase.AddNewProduct(products);
-
-           
+            Products.Add(products);
         }
     }
 }

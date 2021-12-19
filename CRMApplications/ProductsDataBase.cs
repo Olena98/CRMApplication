@@ -8,11 +8,11 @@ namespace CRMApplications
 {
     class ProductsDataBase
     {
-        public static List<Product> Products { get; private set; } = new List<Product>();
+       
 
         public static void AddNewProduct(Product product)
         {
-            Products.Add(product);
+            
         }
     }
 }
