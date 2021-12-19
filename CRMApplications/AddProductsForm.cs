@@ -28,10 +28,24 @@ namespace CRMApplications
         private void CreateProductFromForm()
         {
             var products = new Product();
-
-
-            products.ProductName = productName.Text;
-            products.ProductDescription = productDescription.Text;
+            if (String.IsNullOrWhiteSpace(productName.ToString())) 
+            {
+                MessageBox.Show("Incorrect input. Please try again");
+                return;
+            }
+            else 
+            {
+                products.ProductName = productName.Text;
+            }
+            if (String.IsNullOrWhiteSpace(productDescription.ToString()))
+            {
+                MessageBox.Show("Incorrect input. Please try again");
+                return;
+            }
+            else 
+            {
+                products.ProductDescription = productDescription.Text;
+            }         
             decimal price;
             if (!decimal.TryParse(productPrice.Text, out price))
             {
