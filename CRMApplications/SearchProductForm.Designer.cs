@@ -29,7 +29,6 @@ namespace CRMApplications
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchProductForm));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.Search = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
@@ -37,31 +36,43 @@ namespace CRMApplications
             // 
             // textBox1
             // 
-            resources.ApplyResources(this.textBox1, "textBox1");
+            this.textBox1.Location = new System.Drawing.Point(14, 43);
             this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(196, 20);
+            this.textBox1.TabIndex = 0;
             // 
             // Search
             // 
-            resources.ApplyResources(this.Search, "Search");
+            this.Search.Location = new System.Drawing.Point(216, 43);
             this.Search.Name = "Search";
+            this.Search.Size = new System.Drawing.Size(76, 20);
+            this.Search.TabIndex = 1;
+            this.Search.Text = "Search";
             this.Search.UseVisualStyleBackColor = true;
+            this.Search.Click += new System.EventHandler(this.Search_Click);
             // 
             // listView1
             // 
             this.listView1.HideSelection = false;
-            resources.ApplyResources(this.listView1, "listView1");
+            this.listView1.Location = new System.Drawing.Point(8, 89);
             this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(283, 233);
+            this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // SearchProductForm
             // 
-            resources.ApplyResources(this, "$this");
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(304, 360);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.Search);
             this.Controls.Add(this.textBox1);
-            this.IsMdiContainer = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "SearchProductForm";
+            this.Text = "SearchProductForm";
             this.ResumeLayout(false);
             this.PerformLayout();
 

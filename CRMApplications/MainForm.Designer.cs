@@ -1,7 +1,7 @@
 ﻿
 namespace CRMApplications
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,14 +31,14 @@ namespace CRMApplications
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.productsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.createProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.searchProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createNewOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchOrdersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,23 +62,6 @@ namespace CRMApplications
             this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
             this.productsToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.productsToolStripMenuItem.Text = "Products";
-            // 
-            // createProductToolStripMenuItem
-            // 
-            this.createProductToolStripMenuItem.Checked = true;
-            this.createProductToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.createProductToolStripMenuItem.Name = "createProductToolStripMenuItem";
-            this.createProductToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.createProductToolStripMenuItem.Text = "Create product";
-            this.createProductToolStripMenuItem.Click += new System.EventHandler(this.createProductToolStripMenuItem_Click);
-            // 
-            // searchProductToolStripMenuItem
-            // 
-            this.searchProductToolStripMenuItem.CheckOnClick = true;
-            this.searchProductToolStripMenuItem.Name = "searchProductToolStripMenuItem";
-            this.searchProductToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.searchProductToolStripMenuItem.Text = "Search product";
-            this.searchProductToolStripMenuItem.Click += new System.EventHandler(this.searchProductToolStripMenuItem_Click);
             // 
             // clientsToolStripMenuItem
             // 
@@ -122,7 +105,21 @@ namespace CRMApplications
             this.searchOrdersToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.searchOrdersToolStripMenuItem.Text = "Search orders";
             // 
-            // Form1
+            // createProductToolStripMenuItem
+            // 
+            this.createProductToolStripMenuItem.Name = "createProductToolStripMenuItem";
+            this.createProductToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.createProductToolStripMenuItem.Text = "Create product";
+            this.createProductToolStripMenuItem.Click += new System.EventHandler(this.createProductToolStripMenuItem_Click_1);
+            // 
+            // searchProductToolStripMenuItem
+            // 
+            this.searchProductToolStripMenuItem.Name = "searchProductToolStripMenuItem";
+            this.searchProductToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.searchProductToolStripMenuItem.Text = "Search product";
+            this.searchProductToolStripMenuItem.Click += new System.EventHandler(this.searchProductToolStripMenuItem_Click_1);
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -130,8 +127,9 @@ namespace CRMApplications
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "MainForm";
+            this.Text = "CRM";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -143,14 +141,14 @@ namespace CRMApplications
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem productsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem createProductToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem searchProductToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ordersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addNewClientToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem searchClientToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createNewOrderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem searchOrdersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createProductToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem searchProductToolStripMenuItem;
     }
 }
 

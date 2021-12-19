@@ -22,38 +22,34 @@ namespace CRMApplications
 
         public void productCreate_Click(object sender, EventArgs e)
         {
+            CreateProductFromForm();                                           
+        }
+       
+        private void CreateProductFromForm()
+        {
             var products = new Product();
+
+
             products.ProductName = productName.Text;
             products.ProductDescription = productDescription.Text;
             decimal price;
             if (!decimal.TryParse(productPrice.Text, out price))
             {
-              MessageBox.Show("Incorrect input. Please try again");
+                MessageBox.Show("Incorrect input. Please try again");
+                return;
             }
             products.Price = price;
             int number;
-            if(!int.TryParse(productNumber.Text, out number)) 
-            {
-               MessageBox.Show("Incorrect input. Please try again");
-            }
-            products.ProductNumber = number;
-            bool existence;
-            if (!bool.TryParse(Console.ReadLine(), out existence))
+            if (!int.TryParse(productNumber.Text, out number))
             {
                 MessageBox.Show("Incorrect input. Please try again");
+                return;
             }
-            products.Existence = existence;
-            MessageBox.Show("Products guid id: " + products.Id.ToString());
+            products.ProductNumber = number;
+            products.Existence = checkBoxProductExistence.Checked;
             products.Id = Guid.NewGuid();
-           
+
             ProductService.AddNewProduct(products);
-                                           
         }
-       
-
-
-
     }
-
-
 }
