@@ -22,7 +22,8 @@ namespace CRMApplications
 
         public void productCreate_Click(object sender, EventArgs e)
         {
-            CreateProductFromForm();                                           
+            CreateProductFromForm(); 
+                                                     
         }
        
         private void CreateProductFromForm()
@@ -64,6 +65,7 @@ namespace CRMApplications
             products.Id = Guid.NewGuid();
 
             ProductService.AddNewProduct(products);
+            ProductsDataBase.SaveNewProduct();
         }
     }
 }

@@ -1,0 +1,4 @@
+<products>
+  <product guid="0401ac79-e126-4448-8b5c-d801247c4bbe" productName="vacuum cleaner" description="Color: white" price="3999" productNumber="123456" existence="True" />
+  <product guid="b988bf0a-626b-4e53-bc76-511f429164c6" productName="vacuum cleaner" description="Color: white" price="3999" productNumber="123456" existence="True" />
+</products>
