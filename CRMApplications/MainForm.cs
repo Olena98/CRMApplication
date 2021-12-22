@@ -30,6 +30,13 @@ namespace CRMApplications
             SearchProductForm searchProductForm = new SearchProductForm();
             searchProductForm.MdiParent = this;
             searchProductForm.Show();          
+        }      
+
+        private void addNewClientToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddClientsForm addClientsForm = new AddClientsForm();
+            addClientsForm.MdiParent = this;
+            addClientsForm.Show();
         }
     }
 }

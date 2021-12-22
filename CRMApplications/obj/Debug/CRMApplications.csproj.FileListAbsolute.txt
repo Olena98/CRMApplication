@@ -10,3 +10,4 @@ C:\Users\Olena\source\repos\CRMApplication\CRMApplications\obj\Debug\CRMApplicat
 C:\Users\Olena\source\repos\CRMApplication\CRMApplications\obj\Debug\CRMApplications.pdb
 C:\Users\Olena\source\repos\CRMApplication\CRMApplications\obj\Debug\CRMApplications.SearchProductForm.resources
 C:\Users\Olena\source\repos\CRMApplication\CRMApplications\obj\Debug\CRMApplications.MainForm.resources
+C:\Users\Olena\source\repos\CRMApplication\CRMApplications\obj\Debug\CRMApplications.AddClientsForm.resources
