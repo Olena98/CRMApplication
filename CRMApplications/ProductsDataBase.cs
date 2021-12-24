@@ -27,9 +27,9 @@ namespace CRMApplications
             XmlNode rootElement = xDoc.CreateNode(XmlNodeType.Element, "products", string.Empty);
             xDoc.AppendChild(rootElement);
 
-            foreach (var order in ProductService.Products)
+            foreach (var product in ProductService.Products)
             {
-                AppendOrderNode(rootElement, order);
+                AppendOrderNode(rootElement, product);
             }
 
             xDoc.Save(xmlPath);

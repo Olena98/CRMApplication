@@ -53,6 +53,8 @@
       <DependentUpon>AddClientsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Client.cs" />
+    <Compile Include="ClientsDataBase.cs" />
+    <Compile Include="ClientService.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="ProductsDataBase.cs" />
     <Compile Include="ProductService.cs" />

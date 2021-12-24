@@ -70,6 +70,10 @@ namespace CRMApplications
                 clients.PhoneNumber = clientPhoneNumber.Text;
             }
             clients.Id = Guid.NewGuid();
+
+            ClientService.AddNewClient(clients);
+            ClientsDataBase.SaveNewClient();
+
         }
 
 
