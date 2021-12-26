@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace CRMApplications
 {
-    public partial class Form1 : Form
+    public partial class AddOrdersForm : Form
     {
-        public Form1()
+        public AddOrdersForm()
         {
             InitializeComponent();
         }
+
+       
     }
 }

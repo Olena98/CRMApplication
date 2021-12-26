@@ -1,0 +1,12 @@
+C:\Users\Olena\source\repos\CRMApplication\CRMApplications\bin\Debug\CRMApplications.exe.config
+C:\Users\Olena\source\repos\CRMApplication\CRMApplications\bin\Debug\CRMApplications.exe
+C:\Users\Olena\source\repos\CRMApplication\CRMApplications\bin\Debug\CRMApplications.pdb
+C:\Users\Olena\source\repos\CRMApplication\CRMApplications\obj\Debug\CRMApplications.csproj.AssemblyReference.cache
+C:\Users\Olena\source\repos\CRMApplication\CRMApplications\obj\Debug\CRMApplications.AddProductsForm.resources
+C:\Users\Olena\source\repos\CRMApplication\CRMApplications\obj\Debug\CRMApplications.Properties.Resources.resources
+C:\Users\Olena\source\repos\CRMApplication\CRMApplications\obj\Debug\CRMApplications.csproj.GenerateResource.cache
+C:\Users\Olena\source\repos\CRMApplication\CRMApplications\obj\Debug\CRMApplications.csproj.CoreCompileInputs.cache
+C:\Users\Olena\source\repos\CRMApplication\CRMApplications\obj\Debug\CRMApplications.exe
+C:\Users\Olena\source\repos\CRMApplication\CRMApplications\obj\Debug\CRMApplications.pdb
+C:\Users\Olena\source\repos\CRMApplication\CRMApplications\obj\Debug\CRMApplications.SearchProductForm.resources
+C:\Users\Olena\source\repos\CRMApplication\CRMApplications\obj\Debug\CRMApplications.MainForm.resources

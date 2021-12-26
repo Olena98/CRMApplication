@@ -1,0 +1,4 @@
+<products>
+  <product guid="b9017ae4-ad67-4bde-9d14-928423de79a1" productName="a" description="s" price="123" productNumber="123456" existence="True" />
+  <product guid="75d73c27-f1b1-4789-8869-1e2c3e51cd46" productName="a" description="s" price="123" productNumber="123456" existence="True" />
+</products>
