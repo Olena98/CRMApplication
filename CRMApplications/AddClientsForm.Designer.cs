@@ -51,7 +51,7 @@ namespace CRMApplications
             // 
             // Email
             // 
-            this.Email.Location = new System.Drawing.Point(134, 198);
+            this.Email.Location = new System.Drawing.Point(134, 195);
             this.Email.Name = "Email";
             this.Email.Size = new System.Drawing.Size(180, 20);
             this.Email.TabIndex = 1;
@@ -73,7 +73,7 @@ namespace CRMApplications
             // Create
             // 
             this.Create.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Create.Location = new System.Drawing.Point(123, 315);
+            this.Create.Location = new System.Drawing.Point(110, 299);
             this.Create.Name = "Create";
             this.Create.Size = new System.Drawing.Size(86, 35);
             this.Create.TabIndex = 5;
@@ -100,7 +100,6 @@ namespace CRMApplications
             this.clientSurname.Size = new System.Drawing.Size(65, 17);
             this.clientSurname.TabIndex = 7;
             this.clientSurname.Text = "Surname";
-            
             // 
             // clientLastname
             // 
@@ -126,7 +125,7 @@ namespace CRMApplications
             // 
             this.clientPhone.AutoSize = true;
             this.clientPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.clientPhone.Location = new System.Drawing.Point(29, 264);
+            this.clientPhone.Location = new System.Drawing.Point(29, 255);
             this.clientPhone.Name = "clientPhone";
             this.clientPhone.Size = new System.Drawing.Size(99, 17);
             this.clientPhone.TabIndex = 10;
@@ -134,7 +133,7 @@ namespace CRMApplications
             // 
             // clientPhoneNumber
             // 
-            this.clientPhoneNumber.Location = new System.Drawing.Point(134, 263);
+            this.clientPhoneNumber.Location = new System.Drawing.Point(134, 252);
             this.clientPhoneNumber.Name = "clientPhoneNumber";
             this.clientPhoneNumber.Size = new System.Drawing.Size(180, 20);
             this.clientPhoneNumber.TabIndex = 11;
@@ -143,7 +142,7 @@ namespace CRMApplications
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(326, 390);
+            this.ClientSize = new System.Drawing.Size(325, 348);
             this.Controls.Add(this.clientPhoneNumber);
             this.Controls.Add(this.clientPhone);
             this.Controls.Add(this.clientEmail);
@@ -155,6 +154,9 @@ namespace CRMApplications
             this.Controls.Add(this.LastName);
             this.Controls.Add(this.Email);
             this.Controls.Add(this.clientName);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AddClientsForm";
             this.Text = "AddClientsForm";
             this.ResumeLayout(false);

@@ -144,7 +144,7 @@ namespace CRMApplications
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(337, 294);
+            this.ClientSize = new System.Drawing.Size(342, 316);
             this.Controls.Add(this.checkBoxProductExistence);
             this.Controls.Add(this.productNumber);
             this.Controls.Add(this.productPrice);
