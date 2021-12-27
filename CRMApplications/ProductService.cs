@@ -14,6 +14,7 @@ namespace CRMApplications
         public static void AddNewProduct(Product products)
         {
             Products.Add(products);
+            ProductsDataBase.SaveNewProduct();
             
         }
         public static List<Product> GetProductByName(string name) 

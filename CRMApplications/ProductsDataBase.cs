@@ -10,7 +10,7 @@ namespace CRMApplications
 {
     class ProductsDataBase
     {
-        private static string xmlPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "productWF.xml");
+        private static string xmlPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "productWF.xml"); 
         
         public static void Initialize()
         {          
@@ -23,16 +23,16 @@ namespace CRMApplications
             {
                 return;
             }
-            XmlDocument xDoc = new XmlDocument();
+            XmlDocument xDoc = new XmlDocument();           
             XmlNode rootElement = xDoc.CreateNode(XmlNodeType.Element, "products", string.Empty);
-            xDoc.AppendChild(rootElement);
+            xDoc.AppendChild(rootElement);           
+                           
+                foreach (Product product in ProductService.Products)
+                {
+                    AppendOrderNode(rootElement, product);
+                }
 
-            foreach (var product in ProductService.Products)
-            {
-                AppendOrderNode(rootElement, product);
-            }
-
-            xDoc.Save(xmlPath);
+                xDoc.Save(xmlPath);                     
         }
         private static void AppendOrderNode(XmlNode parentNode, Product product)
         {
@@ -51,7 +51,6 @@ namespace CRMApplications
 
             List<Product> products = new List<Product>();
             var doc = new XmlDocument();
-
             if (File.Exists(xmlPath))
             {
                 doc.Load(xmlPath);
@@ -61,6 +60,7 @@ namespace CRMApplications
                 File.Create(xmlPath);
                 doc.CreateElement("products");
             }
+
             var xRoot = doc.DocumentElement;
             foreach (XmlNode xnode in xRoot)
             {

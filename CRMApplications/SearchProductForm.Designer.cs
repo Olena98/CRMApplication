@@ -40,7 +40,6 @@ namespace CRMApplications
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(196, 20);
             this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Search
             // 
@@ -60,6 +59,7 @@ namespace CRMApplications
             this.listView1.Size = new System.Drawing.Size(284, 231);
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.List;
             // 
             // SearchProductForm
             // 

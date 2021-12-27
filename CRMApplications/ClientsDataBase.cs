@@ -10,10 +10,11 @@ namespace CRMApplications
 {
     class ClientsDataBase
     {
-        private static string xmlPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "clientWF.xml");
+        private static string xmlPath;
 
         public static void Initialize()
         {
+            xmlPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "clientWF.xml");
             ClientService.Clients = ReadXmlFile(xmlPath);
         }
 

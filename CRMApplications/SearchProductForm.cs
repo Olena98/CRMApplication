@@ -19,22 +19,20 @@ namespace CRMApplications
 
         private void Search_Click(object sender, EventArgs e)
         {
-            
+            MessageBox.Show(ProductService.Products.Count.ToString());
+            foreach (var item in ProductService.Products)
+            {
+
+                listView1.Items.Add("Product name: ").SubItems.Add(item.ProductName);
+
+            }
+
         }
         public void SearchProduct() 
         {
         
         }
-       
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-     
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
-        }
+      
     }
 }
