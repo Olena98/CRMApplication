@@ -16,5 +16,14 @@ namespace CRMApplications
         {
             InitializeComponent();
         }
+
+        private void SearchClient_Click(object sender, EventArgs e)
+        {
+
+        }
+        public void SearchAllClient() 
+        {
+        
+        }
     }
 }

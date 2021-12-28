@@ -12,6 +12,7 @@ namespace CRMApplications
         public static void AddNewClient(Client clients)
         {
             Clients.Add(clients);
+            ClientsDataBase.SaveAllClient();
         }
         public static List<Client> GetClientByName(string name) 
         {

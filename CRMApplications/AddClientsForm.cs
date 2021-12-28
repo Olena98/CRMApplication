@@ -72,7 +72,7 @@ namespace CRMApplications
             clients.Id = Guid.NewGuid();
 
             ClientService.AddNewClient(clients);
-            ClientsDataBase.SaveNewClient();
+          
 
         }
 
