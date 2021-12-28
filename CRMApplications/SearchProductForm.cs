@@ -19,8 +19,12 @@ namespace CRMApplications
 
         private void Search_Click(object sender, EventArgs e)
         {
+            SearchProduct();
+        }
+        public void SearchProduct() 
+        {
             string nameOfProduct = textBox1.Text;
-            if (String.IsNullOrWhiteSpace(nameOfProduct)) 
+            if (String.IsNullOrWhiteSpace(nameOfProduct))
             {
                 MessageBox.Show("Incorrect input!");
             }
@@ -30,21 +34,36 @@ namespace CRMApplications
                 OutputProductList(resultName);
             }
             string description = textBox1.Text;
-            if (String.IsNullOrWhiteSpace(description)) 
+            if (String.IsNullOrWhiteSpace(description))
             {
                 MessageBox.Show("Incorrect input!");
             }
-            else 
+            else
             {
                 var resultDescription = ProductService.GetProductByDescription(description);
                 OutputProductList(resultDescription);
             }
-
+            decimal price;
+            if (decimal.TryParse(textBox1.Text, out price))
+            {
+                
+                var resultPrice = ProductService.GetProductByPrice(price);
+                OutputProductList(resultPrice);
+            }           
+            int number;
+            if (int.TryParse(textBox1.Text, out number))
+            {
+              
+                var resultNumber = ProductService.GetProductByNumber(number);
+                OutputProductList(resultNumber);
+            }         
+            bool existence;
+            if (bool.TryParse(textBox1.Text, out existence))
+            {              
+                var resultExistence = ProductService.GetProductByExistence(existence);
+                OutputProductList(resultExistence);
+            }
            
-        }
-        public void SearchProduct() 
-        {
-        
         }
         internal void OutputProductList(List<Product>products) 
         {
