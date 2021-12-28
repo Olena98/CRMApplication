@@ -19,18 +19,50 @@ namespace CRMApplications
 
         private void Search_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(ProductService.Products.Count.ToString());
-            foreach (var item in ProductService.Products)
+            string nameOfProduct = textBox1.Text;
+            if (String.IsNullOrWhiteSpace(nameOfProduct)) 
             {
-
-                listView1.Items.Add("Product name: ").SubItems.Add(item.ProductName);
-
+                MessageBox.Show("Incorrect input!");
+            }
+            else
+            {
+                var resultName = ProductService.GetProductByName(nameOfProduct);
+                OutputProductList(resultName);
+            }
+            string description = textBox1.Text;
+            if (String.IsNullOrWhiteSpace(description)) 
+            {
+                MessageBox.Show("Incorrect input!");
+            }
+            else 
+            {
+                var resultDescription = ProductService.GetProductByDescription(description);
+                OutputProductList(resultDescription);
             }
 
+           
         }
         public void SearchProduct() 
         {
         
+        }
+        internal void OutputProductList(List<Product>products) 
+        {
+            if (products.Count != 0) 
+            {
+                MessageBox.Show("Count of products: " + products.Count);
+                foreach (var item in products)
+                {
+                    listView1.Items.Add(item.ProductName);
+                    listView1.Items.Add(item.ProductDescription);
+                    listView1.Items.Add(item.ProductNumber.ToString());
+                    listView1.Items.Add(item.Price.ToString());
+                    listView1.Items.Add(item.Existence.ToString());
+                    listView1.Items.Add(item.Id.ToString());
+                }
+             
+            }
+           
         }
 
       

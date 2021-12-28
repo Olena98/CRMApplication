@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CRMApplications
 {
@@ -11,18 +12,19 @@ namespace CRMApplications
     {
         public static List<Product> Products = new List<Product>();
 
-        public static void AddNewProduct(Product products)
-        {
-            Products.Add(products);
-            ProductsDataBase.SaveNewProduct();
-            
+        public static void AddNewProduct(Product product)
+        {          
+            Products.Add(product);
+            ProductsDataBase.SaveAllProducts();           
         }
         public static List<Product> GetProductByName(string name) 
         {
+            name = name.ToUpper();
             return Products.Where(p => p.ProductName.ToUpper().Contains(name)).ToList();
         }
         public static List<Product> GetProductByDescription(string description)
         {
+            description = description.ToUpper();
             return Products.Where(p => p.ProductDescription.ToUpper().Contains(description)).ToList();
         }
         public static List<Product> GetProductByPrice(decimal price) 
