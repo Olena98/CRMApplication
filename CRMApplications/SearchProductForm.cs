@@ -63,6 +63,9 @@ namespace CRMApplications
                 var resultExistence = ProductService.GetProductByExistence(existence);
                 OutputProductList(resultExistence);
             }
+            Guid guid = Guid.Parse(textBox1.Text);
+            var resultId = ProductService.GetProductByGuid(guid);
+            OutputProductList(resultId);
            
         }
         internal void OutputProductList(List<Product>products) 
