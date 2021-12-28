@@ -32,6 +32,7 @@ namespace CRMApplications
             {
                 var resultName = ProductService.GetProductByName(nameOfProduct);
                 OutputProductList(resultName);
+                
             }
             string description = textBox1.Text;
             if (String.IsNullOrWhiteSpace(description))
@@ -41,31 +42,35 @@ namespace CRMApplications
             else
             {
                 var resultDescription = ProductService.GetProductByDescription(description);
-                OutputProductList(resultDescription);
+                OutputProductList(resultDescription);                
             }
             decimal price;
             if (decimal.TryParse(textBox1.Text, out price))
-            {
-                
+            {                
                 var resultPrice = ProductService.GetProductByPrice(price);
                 OutputProductList(resultPrice);
-            }           
+            }
+           
             int number;
             if (int.TryParse(textBox1.Text, out number))
-            {
-              
+            {              
                 var resultNumber = ProductService.GetProductByNumber(number);
                 OutputProductList(resultNumber);
-            }         
+            }
+             
             bool existence;
             if (bool.TryParse(textBox1.Text, out existence))
             {              
                 var resultExistence = ProductService.GetProductByExistence(existence);
                 OutputProductList(resultExistence);
             }
-            Guid guid = Guid.Parse(textBox1.Text);
-            var resultId = ProductService.GetProductByGuid(guid);
-            OutputProductList(resultId);
+            
+            Guid guid;
+            if (Guid.TryParse(textBox1.Text, out guid))
+            {
+                var resultId = ProductService.GetProductByGuid(guid);
+                OutputProductList(resultId);            
+            }
            
         }
         internal void OutputProductList(List<Product>products) 

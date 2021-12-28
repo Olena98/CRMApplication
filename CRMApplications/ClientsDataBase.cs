@@ -75,7 +75,7 @@ namespace CRMApplications
                     {
                         client.ClientName = attrClientName.Value;
                     }
-                    XmlNode attrSurname = xnode.Attributes.GetNamedItem("clientsurname");
+                    XmlNode attrSurname = xnode.Attributes.GetNamedItem("clientSurname");
                     if (attrSurname != null)
                     {
                         client.ClientSurname = attrSurname.Value;
@@ -90,7 +90,7 @@ namespace CRMApplications
                     {
                         client.PhoneNumber = attrPhone.Value;
                     }
-                    XmlNode attrEmail = xnode.Attributes.GetNamedItem("clientemail");
+                    XmlNode attrEmail = xnode.Attributes.GetNamedItem("clientEmail");
                     if (attrEmail != null)
                     {
                         client.Email = attrEmail.Value;
