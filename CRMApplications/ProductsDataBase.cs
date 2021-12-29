@@ -5,34 +5,35 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using System.IO;
+using System.Diagnostics;
 
 namespace CRMApplications
 {
     class ProductsDataBase
     {
-        private static string xmlPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "productWF.xml");
+        private static string xmlPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "productWF.xml"); 
         
         public static void Initialize()
         {          
             ProductService.Products = ReadXmlFile(xmlPath);
         }
 
-        public static void SaveNewProduct()
+        public static void SaveAllProducts()
         {
             if (ProductService.Products == null || ProductService.Products.Count == 0)
             {
                 return;
             }
-            XmlDocument xDoc = new XmlDocument();
+            XmlDocument xDoc = new XmlDocument();           
             XmlNode rootElement = xDoc.CreateNode(XmlNodeType.Element, "products", string.Empty);
-            xDoc.AppendChild(rootElement);
+            xDoc.AppendChild(rootElement);           
+                           
+                foreach (Product product in ProductService.Products)
+                {
+                    AppendOrderNode(rootElement, product);
+                }
 
-            foreach (var product in ProductService.Products)
-            {
-                AppendOrderNode(rootElement, product);
-            }
-
-            xDoc.Save(xmlPath);
+                xDoc.Save(xmlPath);                     
         }
         private static void AppendOrderNode(XmlNode parentNode, Product product)
         {
@@ -47,11 +48,9 @@ namespace CRMApplications
             parentNode.AppendChild(productElem);
         }
         public static List<Product> ReadXmlFile(string xmlPath)
-        {
-
+        {         
             List<Product> products = new List<Product>();
             var doc = new XmlDocument();
-
             if (File.Exists(xmlPath))
             {
                 doc.Load(xmlPath);
@@ -61,10 +60,10 @@ namespace CRMApplications
                 File.Create(xmlPath);
                 doc.CreateElement("products");
             }
-            var xRoot = doc.DocumentElement;
+
+            var xRoot = doc.DocumentElement;          
             foreach (XmlNode xnode in xRoot)
             {
-
                 if (xnode.Attributes.Count > 0)
                 {
                     Product product = new Product();
@@ -99,7 +98,7 @@ namespace CRMApplications
                     {
                         product.Id = Guid.Parse(attrGuid.Value);
                     }
-                   
+
                     products.Add(product);
                 }
             }

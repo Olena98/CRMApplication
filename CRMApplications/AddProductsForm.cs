@@ -65,7 +65,7 @@ namespace CRMApplications
             products.Id = Guid.NewGuid();
 
             ProductService.AddNewProduct(products);
-            ProductsDataBase.SaveNewProduct();
+            
         }
     }
 }

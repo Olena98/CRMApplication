@@ -54,11 +54,12 @@ namespace CRMApplications
             // listView1
             // 
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(8, 89);
+            this.listView1.Location = new System.Drawing.Point(8, 103);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(283, 233);
+            this.listView1.Size = new System.Drawing.Size(284, 231);
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.List;
             // 
             // SearchProductForm
             // 

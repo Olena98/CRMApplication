@@ -14,10 +14,11 @@ namespace CRMApplications
 
         public static void Initialize()
         {
+           
             ClientService.Clients = ReadXmlFile(xmlPath);
         }
 
-        public static void SaveNewClient()
+        public static void SaveAllClient()
         {
             if (ClientService.Clients == null || ClientService.Clients.Count == 0)
             {
@@ -74,7 +75,7 @@ namespace CRMApplications
                     {
                         client.ClientName = attrClientName.Value;
                     }
-                    XmlNode attrSurname = xnode.Attributes.GetNamedItem("clientsurname");
+                    XmlNode attrSurname = xnode.Attributes.GetNamedItem("clientSurname");
                     if (attrSurname != null)
                     {
                         client.ClientSurname = attrSurname.Value;
@@ -89,7 +90,7 @@ namespace CRMApplications
                     {
                         client.PhoneNumber = attrPhone.Value;
                     }
-                    XmlNode attrEmail = xnode.Attributes.GetNamedItem("clientemail");
+                    XmlNode attrEmail = xnode.Attributes.GetNamedItem("clientEmail");
                     if (attrEmail != null)
                     {
                         client.Email = attrEmail.Value;

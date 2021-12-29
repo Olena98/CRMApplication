@@ -20,6 +20,7 @@ namespace CRMApplications
         private void button1_Click(object sender, EventArgs e)
         {
             CreateClientFromForm();
+
         }
         public void CreateClientFromForm() 
         {
@@ -72,7 +73,7 @@ namespace CRMApplications
             clients.Id = Guid.NewGuid();
 
             ClientService.AddNewClient(clients);
-            ClientsDataBase.SaveNewClient();
+          
 
         }
 
