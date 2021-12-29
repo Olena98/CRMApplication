@@ -47,5 +47,12 @@ namespace CRMApplications
             searchClientForm.MdiParent = this;
             searchClientForm.Show();
         }
+
+        private void createNewOrderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddOrdersForm addOrdersForm = new AddOrdersForm();
+            addOrdersForm.MdiParent = this;
+            addOrdersForm.Show();
+        }
     }
 }
