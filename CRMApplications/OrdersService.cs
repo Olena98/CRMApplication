@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 namespace CRMApplications
 {
     class OrdersService
+
     {
+        public static List<Order> Orders = new List<Order>();
     }
 }
