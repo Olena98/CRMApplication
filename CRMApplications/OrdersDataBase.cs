@@ -46,5 +46,69 @@ namespace CRMApplications
 
             parentNode.AppendChild(productElem);
         }
+        public static List<Order> ReadXmlFile(string xmlPath)
+        {
+
+            List<Order> orders = new List<Order>();
+            var doc = new XmlDocument();
+
+            if (File.Exists(xmlPath))
+            {
+                doc.Load(xmlPath);
+            }
+            else
+            {
+                File.Create(xmlPath);
+                doc.CreateElement("orders");
+            }
+            var xRoot = doc.DocumentElement;
+            foreach (XmlNode xnode in xRoot)
+            {
+
+                if (xnode.Attributes.Count > 0)
+                {
+                    Order order = new Order();
+
+                    XmlNode attrGuid = xnode.Attributes.GetNamedItem("guid");
+                    if (attrGuid != null)
+                    {
+                        order.Id = Guid.Parse(attrGuid.Value);
+                    }
+                    XmlNode attrOrderNumber = xnode.Attributes.GetNamedItem("orderNumber");
+                    if (attrOrderNumber != null)
+                    {
+                        order.OrderNumber = Convert.ToInt32(attrOrderNumber.Value);
+                    }
+                    XmlNode attrOrderDate = xnode.Attributes.GetNamedItem("orderDate");
+                    if (attrOrderDate != null)
+                    {
+                        order.OrderDate = DateTime.Parse(attrOrderDate.Value);
+                    }
+                    XmlNode attrOrderStatus = xnode.Attributes.GetNamedItem("orderStatus");
+                    if (attrOrderStatus != null)
+                    {
+                        order.Status = (Order.OrderStatus)Enum.Parse(typeof(Order.OrderStatus),attrOrderStatus.Value);
+                    }
+                    XmlNode attrClientPhone = xnode.Attributes.GetNamedItem("clientPhone");
+                    if (attrClientPhone != null)
+                    {
+                        order.ClientPhone = attrClientPhone.Value;
+                    }
+                    XmlNode attrClientGuid = xnode.Attributes.GetNamedItem("clientGuid");
+                    if (attrClientGuid != null)
+                    {
+                        order.ClientGuid = Guid.Parse(attrClientGuid.Value);
+                    }
+                    XmlNode attrProductGuid = xnode.Attributes.GetNamedItem("productGuid");
+                    if(attrProductGuid != null)
+                    {
+                        order.ProductGuid = Guid.Parse(attrProductGuid.Value);
+                    }
+
+                    orders.Add(order);
+                }
+            }
+            return orders;
+        }
     }
 }
