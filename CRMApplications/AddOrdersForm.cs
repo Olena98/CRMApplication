@@ -52,9 +52,10 @@ namespace CRMApplications
             }
             else
             {
+               
                 order.Status = status;
             }
-
+            OrdersService.AddNewOrder(order);
 
         }
 
@@ -62,7 +63,8 @@ namespace CRMApplications
         {
             string selectedStatus = comboBox1.SelectedItem.ToString();
             MessageBox.Show(selectedStatus);
-
+           
+            
         }
 
     }
