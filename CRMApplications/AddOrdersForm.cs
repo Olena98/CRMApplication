@@ -16,22 +16,18 @@ namespace CRMApplications
         {
             InitializeComponent();
         }
-
-       
-
         private void button1_Click(object sender, EventArgs e)
         {
             CreateOrderFromForm();
-           
         }
-        public void CreateOrderFromForm() 
+        public void CreateOrderFromForm()
         {
             var order = new Order();
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.CustomFormat = "dd:MM:yyyy HH:mm";            
+            dateTimePicker1.CustomFormat = "dd:MM:yyyy HH:mm";
             order.OrderDate = dateTimePicker1.Value;
             MessageBox.Show(order.OrderDate.ToString());
-            int ordersNumber;           
+            int ordersNumber;
             if (!int.TryParse(orderNumber.Text, out ordersNumber))
             {
                 MessageBox.Show("Incorrect input. Please try again");
@@ -39,8 +35,8 @@ namespace CRMApplications
             }
             order.OrderNumber = ordersNumber;
             order.Id = Guid.NewGuid();
-            order.ClientGuid = Guid.Parse(textBox1.Text);
-            order.ProductGuid = Guid.Parse(textBox2.Text);
+            order.ClientGuid = Guid.Parse(textBox2.Text);
+            order.ProductGuid = Guid.Parse(textBox1.Text);
             if (String.IsNullOrWhiteSpace(textBox3.ToString()))
             {
                 MessageBox.Show("Incorrect input. Please try again");
@@ -54,11 +50,11 @@ namespace CRMApplications
             {
                 order.Status = Order.OrderStatus.New;
             }
-            else 
+            else
             {
                 order.Status = status;
             }
-            
+
 
         }
 
@@ -66,7 +62,8 @@ namespace CRMApplications
         {
             string selectedStatus = comboBox1.SelectedItem.ToString();
             MessageBox.Show(selectedStatus);
-            
+
         }
+
     }
 }

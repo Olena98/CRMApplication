@@ -98,7 +98,6 @@ namespace CRMApplications
             this.searchClientToolStripMenuItem.Name = "searchClientToolStripMenuItem";
             this.searchClientToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.searchClientToolStripMenuItem.Text = "Search client";
-            this.searchClientToolStripMenuItem.Click += new System.EventHandler(this.searchClientToolStripMenuItem_Click);
             // 
             // ordersToolStripMenuItem
             // 
