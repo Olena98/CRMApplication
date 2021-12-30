@@ -10,5 +10,11 @@ namespace CRMApplications
 
     {
         public static List<Order> Orders = new List<Order>();
+
+        public static void AddNewOrder(Order order) 
+        {
+            Orders.Add(order);
+            OrdersDataBase.SaveAllOrders();
+        }
     }
 }

@@ -18,6 +18,7 @@ namespace CRMApplications
             Application.SetCompatibleTextRenderingDefault(false);
             ProductsDataBase.Initialize();
             ClientsDataBase.Initialize();
+            OrdersDataBase.Initialize();
             Application.Run(new MainForm());
         }
       

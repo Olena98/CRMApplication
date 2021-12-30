@@ -14,7 +14,7 @@ namespace CRMApplications
 
         public static void Initialize() 
         {
-           
+            OrdersService.Orders = ReadXmlFile(xmlPath);
         }
         public static void SaveAllOrders() 
         {
