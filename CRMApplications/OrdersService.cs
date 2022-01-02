@@ -16,5 +16,9 @@ namespace CRMApplications
             Orders.Add(order);
             OrdersDataBase.SaveAllOrders();
         }
+        public static List<Order> GetOrderByNumber(int number) 
+        {
+            return Orders.Where(o => o.OrderNumber == number).ToList();
+        }
     }
 }

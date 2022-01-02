@@ -57,10 +57,13 @@ namespace CRMApplications
             int number;
             if (!int.TryParse(productNumber.Text, out number))
             {
-                MessageBox.Show("Incorrect input. Please try again");
-                return;
+               products.ProductNumber =  UniqueNumericNumberHelper.GetUniqueProductNumericNumber();
             }
-            products.ProductNumber = number;
+            else 
+            {
+                products.ProductNumber = number;
+            }
+          
             products.Existence = checkBoxProductExistence.Checked;
             products.Id = Guid.NewGuid();
 

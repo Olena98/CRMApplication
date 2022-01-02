@@ -30,10 +30,14 @@ namespace CRMApplications
             int ordersNumber;
             if (!int.TryParse(orderNumber.Text, out ordersNumber))
             {
-                MessageBox.Show("Incorrect input. Please try again");
-                return;
+               order.OrderNumber = UniqueNumericNumberHelper.GetUniqueOrderNumericNumber();
+              
             }
-            order.OrderNumber = ordersNumber;
+            else 
+            {
+                order.OrderNumber = ordersNumber;
+            }
+            
             order.Id = Guid.NewGuid();
             order.ClientGuid = Guid.Parse(textBox2.Text);
             order.ProductGuid = Guid.Parse(textBox1.Text);
