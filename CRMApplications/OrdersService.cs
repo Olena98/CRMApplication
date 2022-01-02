@@ -28,7 +28,10 @@ namespace CRMApplications
         {
             return Orders.Where(o => o.Status == status).ToList();
         }
-        
+        public static List<Order> GetOrdersByClientId(Guid clientGuid) 
+        {
+            return Orders.Where(o => o.ClientGuid == clientGuid).ToList();
+        }
             
 
     }
