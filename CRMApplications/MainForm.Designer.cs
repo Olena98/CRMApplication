@@ -118,8 +118,9 @@ namespace CRMApplications
             // searchOrdersToolStripMenuItem
             // 
             this.searchOrdersToolStripMenuItem.Name = "searchOrdersToolStripMenuItem";
-            this.searchOrdersToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.searchOrdersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.searchOrdersToolStripMenuItem.Text = "Search orders";
+            this.searchOrdersToolStripMenuItem.Click += new System.EventHandler(this.searchOrdersToolStripMenuItem_Click);
             // 
             // MainForm
             // 

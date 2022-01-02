@@ -40,6 +40,7 @@ namespace CRMApplications
         {
             return Orders.Where(o => o.ClientPhone == phone).ToList();
         }    
+        
 
     }
 }
