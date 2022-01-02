@@ -20,5 +20,9 @@ namespace CRMApplications
         {
             return Orders.Where(o => o.OrderNumber == number).ToList();
         }
+        public static List<Order> GetOrderByDate(DateTime date) 
+        {
+            return Orders.Where(o => o.OrderDate == date).ToList();
+        }
     }
 }

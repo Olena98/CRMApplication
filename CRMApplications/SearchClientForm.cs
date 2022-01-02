@@ -86,15 +86,15 @@ namespace CRMApplications
         {
             if (clients.Count != 0)
             {
-                MessageBox.Show("Count of products: " + clients.Count);
+                MessageBox.Show("Count of clients: " + clients.Count);
                 foreach (var item in clients)
                 {
-                    listView1.Items.Add(item.ClientName);
-                    listView1.Items.Add(item.ClientSurname);
-                    listView1.Items.Add(item.ClientLastname);
-                    listView1.Items.Add(item.Email);
-                    listView1.Items.Add(item.PhoneNumber);
-                    listView1.Items.Add(item.Id.ToString());
+                    listView1.Items.Add("Client name: " + item.ClientName);
+                    listView1.Items.Add("Client surname: " + item.ClientSurname);
+                    listView1.Items.Add("Client lastname: " + item.ClientLastname);
+                    listView1.Items.Add("Client email: " + item.Email);
+                    listView1.Items.Add("Client phone: " + item.PhoneNumber);
+                    listView1.Items.Add("Guid: " + item.Id.ToString());
                 }
             }
 

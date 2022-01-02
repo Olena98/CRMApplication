@@ -80,12 +80,12 @@ namespace CRMApplications
                 MessageBox.Show("Count of products: " + products.Count);
                 foreach (var item in products)
                 {
-                    listView1.Items.Add(item.ProductName);
-                    listView1.Items.Add(item.ProductDescription);
-                    listView1.Items.Add(item.ProductNumber.ToString());
-                    listView1.Items.Add(item.Price.ToString());
-                    listView1.Items.Add(item.Existence.ToString());
-                    listView1.Items.Add(item.Id.ToString());
+                    listView1.Items.Add("Product name: " + item.ProductName);
+                    listView1.Items.Add("Product description: " + item.ProductDescription);
+                    listView1.Items.Add("Product number: " + item.ProductNumber.ToString());
+                    listView1.Items.Add("Product price: " + item.Price.ToString());
+                    listView1.Items.Add("Product existence: " + item.Existence.ToString());
+                    listView1.Items.Add("Guid: " + item.Id.ToString());
                 }
              
             }

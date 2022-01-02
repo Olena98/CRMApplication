@@ -73,6 +73,12 @@
     <Compile Include="SearchClientForm.Designer.cs">
       <DependentUpon>SearchClientForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SearchOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchOrderForm.Designer.cs">
+      <DependentUpon>SearchOrderForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SearchProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SearchClientForm.resx">
       <DependentUpon>SearchClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchOrderForm.resx">
+      <DependentUpon>SearchOrderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SearchProductForm.resx">
       <DependentUpon>SearchProductForm.cs</DependentUpon>
