@@ -105,7 +105,7 @@ namespace CRMApplications
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "New",
-            "Is Making Up",
+            "IsMakingUp",
             "Paid",
             "Sent",
             "Canceled"});

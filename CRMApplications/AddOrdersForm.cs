@@ -46,26 +46,19 @@ namespace CRMApplications
             {
                 order.ClientPhone = textBox3.Text;
             }
-            if (!Enum.TryParse(Console.ReadLine(), out Order.OrderStatus status))
-            {
-                order.Status = Order.OrderStatus.New;
-            }
-            else
+            if (Enum.TryParse(comboBox1.Text, out Order.OrderStatus status))
             {
                
                 order.Status = status;
+                MessageBox.Show(status.ToString());
+            }
+            else
+            {
+                order.Status = Order.OrderStatus.New;
+               
             }
             OrdersService.AddNewOrder(order);
 
         }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string selectedStatus = comboBox1.SelectedItem.ToString();
-            MessageBox.Show(selectedStatus);
-           
-            
-        }
-
     }
 }
