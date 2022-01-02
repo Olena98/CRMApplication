@@ -32,6 +32,10 @@ namespace CRMApplications
         {
             return Orders.Where(o => o.ClientGuid == clientGuid).ToList();
         }
+        public static List<Order> GetOrdersByProductId(Guid productGuid) 
+        {
+            return Orders.Where(o => o.ProductGuid == productGuid).ToList();
+        }
             
 
     }
