@@ -30,10 +30,14 @@ namespace CRMApplications
             int ordersNumber;
             if (!int.TryParse(orderNumber.Text, out ordersNumber))
             {
-                MessageBox.Show("Incorrect input. Please try again");
-                return;
+               order.OrderNumber = UniqueNumericNumberHelper.GetUniqueOrderNumericNumber();
+              
             }
-            order.OrderNumber = ordersNumber;
+            else 
+            {
+                order.OrderNumber = ordersNumber;
+            }
+            
             order.Id = Guid.NewGuid();
             order.ClientGuid = Guid.Parse(textBox2.Text);
             order.ProductGuid = Guid.Parse(textBox1.Text);
@@ -46,24 +50,19 @@ namespace CRMApplications
             {
                 order.ClientPhone = textBox3.Text;
             }
-            if (!Enum.TryParse(Console.ReadLine(), out Order.OrderStatus status))
+            if (Enum.TryParse(comboBox1.Text, out Order.OrderStatus status))
             {
-                order.Status = Order.OrderStatus.New;
+               
+                order.Status = status;
+                MessageBox.Show(status.ToString());
             }
             else
             {
-                order.Status = status;
+                order.Status = Order.OrderStatus.New;
+               
             }
-
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string selectedStatus = comboBox1.SelectedItem.ToString();
-            MessageBox.Show(selectedStatus);
+            OrdersService.AddNewOrder(order);
 
         }
-
     }
 }

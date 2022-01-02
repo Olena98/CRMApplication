@@ -30,12 +30,12 @@ namespace CRMApplications
                            
                 foreach (Product product in ProductService.Products)
                 {
-                    AppendOrderNode(rootElement, product);
+                    AppendProductNode(rootElement, product);
                 }
 
                 xDoc.Save(xmlPath);                     
         }
-        private static void AppendOrderNode(XmlNode parentNode, Product product)
+        private static void AppendProductNode(XmlNode parentNode, Product product)
         {
             XmlElement productElem = parentNode.OwnerDocument.CreateElement("product");
             productElem.SetAttribute("guid", product.Id.ToString());

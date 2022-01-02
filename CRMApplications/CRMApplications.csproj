@@ -93,6 +93,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UniqueNumericNumberHelper.cs" />
     <EmbeddedResource Include="AddClientsForm.resx">
       <DependentUpon>AddClientsForm.cs</DependentUpon>
     </EmbeddedResource>
