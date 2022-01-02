@@ -11,18 +11,25 @@ namespace CRMApplications
     {
         public static List<Order> Orders = new List<Order>();
 
-        public static void AddNewOrder(Order order) 
+        public static void AddNewOrder(Order order)
         {
             Orders.Add(order);
             OrdersDataBase.SaveAllOrders();
         }
-        public static List<Order> GetOrderByNumber(int number) 
+        public static List<Order> GetOrderByNumber(int number)
         {
             return Orders.Where(o => o.OrderNumber == number).ToList();
         }
-        public static List<Order> GetOrderByDate(DateTime date) 
+        public static List<Order> GetOrderByDate(DateTime date)
         {
             return Orders.Where(o => o.OrderDate == date).ToList();
         }
+        public static List<Order>GetOrdersByStatus(Order.OrderStatus status) 
+        {
+            return Orders.Where(o => o.Status == status).ToList();
+        }
+        
+            
+
     }
 }
