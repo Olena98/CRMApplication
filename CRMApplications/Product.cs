@@ -15,6 +15,14 @@ namespace CRMApplications
         public bool Existence { get; set; }
         public Guid Id { get; set; }
 
+        public List<ChangeEntry> ChangeEntries { get; set; }
+        public class ChangeEntry
+        {
+            public string ProductName { get; set; }
+            public decimal Price { get; set; }
+            public int ProductNumber { get; set; }
+            public bool Existence { get; set; }
+        }
 
     }
 }
