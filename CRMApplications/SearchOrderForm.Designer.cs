@@ -42,6 +42,7 @@ namespace CRMApplications
             this.listView1.Size = new System.Drawing.Size(298, 277);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.List;
             // 
             // textBox1
             // 
@@ -49,7 +50,6 @@ namespace CRMApplications
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(218, 20);
             this.textBox1.TabIndex = 1;
-            
             // 
             // SearchOrders
             // 
