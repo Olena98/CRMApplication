@@ -53,11 +53,11 @@ namespace CRMApplications
            
             int number;
             if (int.TryParse(textBox1.Text, out number))
-            {              
+            {
                 var resultNumber = ProductService.GetProductByNumber(number);
                 OutputProductList(resultNumber);
+              
             }
-             
             bool existence;
             if (bool.TryParse(textBox1.Text, out existence))
             {              
@@ -74,24 +74,19 @@ namespace CRMApplications
            
         }
         internal void OutputProductList(List<Product>products) 
-        {
-            if (products.Count != 0) 
+        {        
+            for (int i = 0; i < products.Count; i++)
             {
-                MessageBox.Show("Count of products: " + products.Count);
-                foreach (var item in products)
-                {
-                    listView1.Items.Add("Product name: " + item.ProductName);
-                    listView1.Items.Add("Product description: " + item.ProductDescription);
-                    listView1.Items.Add("Product number: " + item.ProductNumber.ToString());
-                    listView1.Items.Add("Product price: " + item.Price.ToString());
-                    listView1.Items.Add("Product existence: " + item.Existence.ToString());
-                    listView1.Items.Add("Guid: " + item.Id.ToString());
-                }
-             
+                listView1.Items.Add("Count: " + i);
+                listView1.Items.Add("Product name: " + products[i].ProductName);
+                listView1.Items.Add("Product description: " + products[i].ProductDescription);
+                listView1.Items.Add("Product number: " + products[i].ProductNumber.ToString());
+                listView1.Items.Add("Product price: " + products[i].Price.ToString());
+                listView1.Items.Add("Product existence: " + products[i].Existence.ToString());
+                listView1.Items.Add("Guid: " + products[i].Id.ToString());
             }
-           
-        }
 
-      
+        }
+           
     }
 }
