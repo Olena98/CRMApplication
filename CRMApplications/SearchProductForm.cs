@@ -21,7 +21,7 @@ namespace CRMApplications
         {
             SearchProduct();
         }
-        public void SearchProduct() 
+        public void SearchProduct()
         {
             string nameOfProduct = textBox1.Text;
             if (String.IsNullOrWhiteSpace(nameOfProduct))
@@ -32,7 +32,7 @@ namespace CRMApplications
             {
                 var resultName = ProductService.GetProductByName(nameOfProduct);
                 OutputProductList(resultName);
-                
+
             }
             string description = textBox1.Text;
             if (String.IsNullOrWhiteSpace(description))
@@ -42,39 +42,39 @@ namespace CRMApplications
             else
             {
                 var resultDescription = ProductService.GetProductByDescription(description);
-                OutputProductList(resultDescription);                
+                OutputProductList(resultDescription);
             }
             decimal price;
             if (decimal.TryParse(textBox1.Text, out price))
-            {                
+            {
                 var resultPrice = ProductService.GetProductByPrice(price);
                 OutputProductList(resultPrice);
             }
-           
+
             int number;
             if (int.TryParse(textBox1.Text, out number))
             {
                 var resultNumber = ProductService.GetProductByNumber(number);
                 OutputProductList(resultNumber);
-              
+
             }
             bool existence;
             if (bool.TryParse(textBox1.Text, out existence))
-            {              
+            {
                 var resultExistence = ProductService.GetProductByExistence(existence);
                 OutputProductList(resultExistence);
             }
-            
+
             Guid guid;
             if (Guid.TryParse(textBox1.Text, out guid))
             {
                 var resultId = ProductService.GetProductByGuid(guid);
-                OutputProductList(resultId);            
+                OutputProductList(resultId);
             }
-           
+
         }
-        internal void OutputProductList(List<Product>products) 
-        {        
+        internal void OutputProductList(List<Product> products)
+        {
             for (int i = 0; i < products.Count; i++)
             {
                 listView1.Items.Add("Count: " + i);
@@ -88,8 +88,41 @@ namespace CRMApplications
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
+            ChangeProduct();
+        }
+        public void ChangeProduct() 
+        {
+            string nameOfProduct = textBox1.Text;           
+            var resultName = ProductService.GetProductByName(nameOfProduct);
+            OutputProductList(resultName);
+            int index;
+            if (int.TryParse(Console.ReadLine(), out index))
+            {
+                MessageBox.Show(resultName[index].ToString());
+            }
+            string changedName = changeProductName.Text;
+            if (String.IsNullOrWhiteSpace(changedName))
+            {
+                Console.WriteLine("Inccorect input, please, try again!");
+            }
+            else
+            {
+                if (changedName == resultName[index].ProductName)
+                {
+                    MessageBox.Show("You entered same name of the product.");
+                }
+                else
+                {
+                    var newChangeEntry = new Product.ChangeEntry();
+                    newChangeEntry.ProductName = resultName[index].ProductName;
+                    resultName[index].ChangeEntries.Add(newChangeEntry);
+                    resultName[index].ProductName = changedName;
+                    ProductsDataBase.SaveAllProducts();
+                }
+            }
+
 
         }
     }

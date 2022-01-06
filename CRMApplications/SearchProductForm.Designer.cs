@@ -101,7 +101,7 @@ namespace CRMApplications
             this.label2.Size = new System.Drawing.Size(113, 17);
             this.label2.TabIndex = 6;
             this.label2.Text = "Count of product";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+          
             // 
             // label3
             // 
@@ -152,6 +152,7 @@ namespace CRMApplications
             this.button1.TabIndex = 15;
             this.button1.Text = "Change";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // changeProductName
             // 
