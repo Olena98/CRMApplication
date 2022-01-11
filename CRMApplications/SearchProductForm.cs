@@ -32,7 +32,6 @@ namespace CRMApplications
             {
                 var resultName = ProductService.GetProductByName(nameOfProduct);
                 OutputProductList(resultName);
-
             }
             string description = textBox1.Text;
             if (String.IsNullOrWhiteSpace(description))
@@ -88,42 +87,28 @@ namespace CRMApplications
 
         }
 
+        public string DataName
+        {
+            get
+            {
+                return textBox1.Text;
+            }
+        }
+        public string DataCount
+        {
+            get
+            {
+                return textBox2.Text;
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            ChangeProduct();
-        }
-        public void ChangeProduct() 
-        {
-            string nameOfProduct = textBox1.Text;           
-            var resultName = ProductService.GetProductByName(nameOfProduct);
-            OutputProductList(resultName);
-            int index;
-            if (int.TryParse(Console.ReadLine(), out index))
-            {
-                MessageBox.Show(resultName[index].ToString());
-            }
-            string changedName = changeProductName.Text;
-            if (String.IsNullOrWhiteSpace(changedName))
-            {
-                Console.WriteLine("Inccorect input, please, try again!");
-            }
-            else
-            {
-                if (changedName == resultName[index].ProductName)
-                {
-                    MessageBox.Show("You entered same name of the product.");
-                }
-                else
-                {
-                    var newChangeEntry = new Product.ChangeEntry();
-                    newChangeEntry.ProductName = resultName[index].ProductName;
-                    resultName[index].ChangeEntries.Add(newChangeEntry);
-                    resultName[index].ProductName = changedName;
-                    ProductsDataBase.SaveAllProducts();
-                }
-            }
-
-
+            AddProductsForm addProductsForm = new AddProductsForm();
+            addProductsForm.Show();   
+            
         }
     }
 }
+    
+

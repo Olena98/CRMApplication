@@ -22,11 +22,10 @@ namespace CRMApplications
 
         public void productCreate_Click(object sender, EventArgs e)
         {
-            CreateProductFromForm(); 
-                                                     
+            CreateProductFromForm();                                                      
         }
        
-        private void CreateProductFromForm()
+        public void CreateProductFromForm()
         {
             var products = new Product();
             if (String.IsNullOrWhiteSpace(productName.ToString())) 
@@ -69,11 +68,40 @@ namespace CRMApplications
 
             ProductService.AddNewProduct(products);
             
-        }
+        }     
 
         private void button1_Click(object sender, EventArgs e)
         {
+            SearchProductForm searchProductForm = new SearchProductForm();                     
+            var resultName = ProductService.GetProductByName(searchProductForm.DataName);
+            int index;
+            if (int.TryParse(searchProductForm.DataCount, out index))
+            {
+                MessageBox.Show(resultName[index].ToString());
 
+            }
+            string changedName = productName.Text;
+            if (String.IsNullOrWhiteSpace(changedName))
+            {
+                MessageBox.Show("Inccorect input, please, try again!");
+            }
+            else
+            {
+                if (changedName == resultName[index].ProductName)
+                {
+                   MessageBox.Show("You entered same name of the product.");
+                }
+                else
+                {
+                    var newChangeEntry = new Product.ChangeEntry();
+                    newChangeEntry.ProductName = resultName[index].ProductName;
+                    resultName[index].ChangeEntries.Add(newChangeEntry);
+                    resultName[index].ProductName = changedName;
+                    ProductsDataBase.SaveAllProducts();
+                }
+            }
+            
         }
+       
     }
 }

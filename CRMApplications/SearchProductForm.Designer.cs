@@ -32,18 +32,9 @@ namespace CRMApplications
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.Search = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.countOfProduct = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.changeProductName = new System.Windows.Forms.TextBox();
-            this.changeProductPrice = new System.Windows.Forms.TextBox();
-            this.changeProductNumber = new System.Windows.Forms.TextBox();
-            this.changeProductExistence = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // textBox1
@@ -74,133 +65,40 @@ namespace CRMApplications
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.List;
             // 
-            // countOfProduct
+            // button1
             // 
-            this.countOfProduct.Location = new System.Drawing.Point(145, 407);
-            this.countOfProduct.Name = "countOfProduct";
-            this.countOfProduct.Size = new System.Drawing.Size(194, 20);
-            this.countOfProduct.TabIndex = 3;
+            this.button1.Location = new System.Drawing.Point(232, 353);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(107, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Change product";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(11, 346);
+            this.label1.Location = new System.Drawing.Point(12, 363);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(338, 51);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "if you want to change the list of products, please,\r\n select the product count an" +
-    "d enter in the field below\r\nand enter new information\r\n";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Count";
             // 
-            // label2
+            // textBox2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(11, 410);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 17);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Count of product";
-          
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(11, 442);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 17);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Product name";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(12, 470);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 17);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Price";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(11, 499);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(109, 17);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Product number";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(12, 528);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 17);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Existence";
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(131, 561);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 28);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Change";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // changeProductName
-            // 
-            this.changeProductName.Location = new System.Drawing.Point(145, 439);
-            this.changeProductName.Name = "changeProductName";
-            this.changeProductName.Size = new System.Drawing.Size(194, 20);
-            this.changeProductName.TabIndex = 16;
-            // 
-            // changeProductPrice
-            // 
-            this.changeProductPrice.Location = new System.Drawing.Point(145, 470);
-            this.changeProductPrice.Name = "changeProductPrice";
-            this.changeProductPrice.Size = new System.Drawing.Size(194, 20);
-            this.changeProductPrice.TabIndex = 17;
-            // 
-            // changeProductNumber
-            // 
-            this.changeProductNumber.Location = new System.Drawing.Point(145, 499);
-            this.changeProductNumber.Name = "changeProductNumber";
-            this.changeProductNumber.Size = new System.Drawing.Size(194, 20);
-            this.changeProductNumber.TabIndex = 18;
-            // 
-            // changeProductExistence
-            // 
-            this.changeProductExistence.AutoSize = true;
-            this.changeProductExistence.Location = new System.Drawing.Point(145, 528);
-            this.changeProductExistence.Name = "changeProductExistence";
-            this.changeProductExistence.Size = new System.Drawing.Size(15, 14);
-            this.changeProductExistence.TabIndex = 19;
-            this.changeProductExistence.UseVisualStyleBackColor = true;
+            this.textBox2.Location = new System.Drawing.Point(76, 360);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(117, 20);
+            this.textBox2.TabIndex = 5;
             // 
             // SearchProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(362, 610);
-            this.Controls.Add(this.changeProductExistence);
-            this.Controls.Add(this.changeProductNumber);
-            this.Controls.Add(this.changeProductPrice);
-            this.Controls.Add(this.changeProductName);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(351, 419);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.countOfProduct);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.Search);
             this.Controls.Add(this.textBox1);
@@ -219,17 +117,8 @@ namespace CRMApplications
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button Search;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.TextBox countOfProduct;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox changeProductName;
-        private System.Windows.Forms.TextBox changeProductPrice;
-        private System.Windows.Forms.TextBox changeProductNumber;
-        private System.Windows.Forms.CheckBox changeProductExistence;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
