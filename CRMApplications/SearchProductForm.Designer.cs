@@ -33,8 +33,7 @@ namespace CRMApplications
             this.Search = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.SuspendLayout();
             // 
             // textBox1
@@ -67,37 +66,28 @@ namespace CRMApplications
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(232, 353);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(101, 357);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 23);
+            this.button1.Size = new System.Drawing.Size(159, 31);
             this.button1.TabIndex = 3;
             this.button1.Text = "Change product";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label1
+            // vScrollBar1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 363);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Count";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(76, 360);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(117, 20);
-            this.textBox2.TabIndex = 5;
+            this.vScrollBar1.Location = new System.Drawing.Point(320, 103);
+            this.vScrollBar1.Name = "vScrollBar1";
+            this.vScrollBar1.Size = new System.Drawing.Size(19, 229);
+            this.vScrollBar1.TabIndex = 4;
             // 
             // SearchProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(351, 419);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.Search);
@@ -118,7 +108,6 @@ namespace CRMApplications
         private System.Windows.Forms.Button Search;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.VScrollBar vScrollBar1;
     }
 }

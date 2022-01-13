@@ -72,15 +72,28 @@ namespace CRMApplications
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SearchProductForm searchProductForm = new SearchProductForm();                     
+            ChangeProduct();
+        }
+        public string NameOfProduct 
+        {  get 
+            {
+                return productName.Text;
+            }
+            set { }
+        }
+       public void ChangeProduct() 
+       {
+            SearchProductForm searchProductForm = new SearchProductForm();
             var resultName = ProductService.GetProductByName(searchProductForm.DataName);
             int index;
-            if (int.TryParse(searchProductForm.DataCount, out index))
+            if (int.TryParse(searchProductForm.DataCount.ToString(), out index))
             {
+             
                 MessageBox.Show(resultName[index].ToString());
 
             }
-            string changedName = productName.Text;
+           
+            string changedName = NameOfProduct;
             if (String.IsNullOrWhiteSpace(changedName))
             {
                 MessageBox.Show("Inccorect input, please, try again!");
@@ -89,7 +102,7 @@ namespace CRMApplications
             {
                 if (changedName == resultName[index].ProductName)
                 {
-                   MessageBox.Show("You entered same name of the product.");
+                    MessageBox.Show("You entered same name of the product.");
                 }
                 else
                 {
@@ -100,7 +113,6 @@ namespace CRMApplications
                     ProductsDataBase.SaveAllProducts();
                 }
             }
-            
         }
        
     }

@@ -76,15 +76,19 @@ namespace CRMApplications
         {
             for (int i = 0; i < products.Count; i++)
             {
-                listView1.Items.Add("Count: " + i);
-                listView1.Items.Add("Product name: " + products[i].ProductName);
-                listView1.Items.Add("Product description: " + products[i].ProductDescription);
-                listView1.Items.Add("Product number: " + products[i].ProductNumber.ToString());
-                listView1.Items.Add("Product price: " + products[i].Price.ToString());
-                listView1.Items.Add("Product existence: " + products[i].Existence.ToString());
-                listView1.Items.Add("Guid: " + products[i].Id.ToString());
+                listView1.Items.Add("Product №: " + i + "(" + products[i].ProductName + "," + products[i].Price + ")");
+                listView1.Focus();
+
             }
 
+        }
+        public string DataCount
+        {
+            get
+            {
+                int count = listView1.SelectedIndices[0];
+                return count.ToString();
+            }
         }
 
         public string DataName
@@ -94,20 +98,18 @@ namespace CRMApplications
                 return textBox1.Text;
             }
         }
-        public string DataCount
-        {
-            get
-            {
-                return textBox2.Text;
-            }
-        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
             AddProductsForm addProductsForm = new AddProductsForm();
-            addProductsForm.Show();   
-            
+            addProductsForm.Show();
+           
+          
+
         }
+
+       
     }
 }
     
