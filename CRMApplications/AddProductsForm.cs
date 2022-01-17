@@ -72,9 +72,8 @@ namespace CRMApplications
         }     
 
         private void button1_Click(object sender, EventArgs e)
-        {
-             MessageBox.Show(DataChangeProduct.Count.ToString());
-
+        {             
+            ChangeProduct();
         }
         public void ChangeProduct() 
         {
@@ -86,6 +85,7 @@ namespace CRMApplications
             {
 
                 MessageBox.Show(resultName[index].ToString());
+               
 
             }
             MessageBox.Show(index.ToString());
