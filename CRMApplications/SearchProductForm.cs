@@ -12,9 +12,10 @@ namespace CRMApplications
 {
     public partial class SearchProductForm : Form
     {
+       
         public SearchProductForm()
         {
-            InitializeComponent();
+            InitializeComponent();                                  
         }
 
         private void Search_Click(object sender, EventArgs e)
@@ -82,35 +83,19 @@ namespace CRMApplications
             }
 
         }
-        public string DataCount
-        {
-            get
-            {
-                int count = listView1.SelectedIndices[0];
-                return count.ToString();
-            }
-        }
-
-        public string DataName
-        {
-            get
-            {
-                return textBox1.Text;
-            }
-        }
-
-
+             
         private void button1_Click(object sender, EventArgs e)
-        {
-            AddProductsForm addProductsForm = new AddProductsForm();
-            addProductsForm.Show();
+        {          
+            DataChangeProduct.Name = textBox1.Text;
+            DataChangeProduct.Count = listView1.SelectedIndices[0];
            
-          
-
+            AddProductsForm addProductsForm = new AddProductsForm();
+             
+            addProductsForm.Show();
+                   
         }
-
-       
-    }
+      
+    }         
 }
     
 

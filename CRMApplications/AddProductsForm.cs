@@ -13,11 +13,12 @@ namespace CRMApplications
 {
     public partial class AddProductsForm : Form
     {
-       
+      
         public AddProductsForm()
                 
         {
             InitializeComponent();
+
         }
 
         public void productCreate_Click(object sender, EventArgs e)
@@ -72,28 +73,23 @@ namespace CRMApplications
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ChangeProduct();
+             MessageBox.Show(DataChangeProduct.Count.ToString());
+
         }
-        public string NameOfProduct 
-        {  get 
-            {
-                return productName.Text;
-            }
-            set { }
-        }
-       public void ChangeProduct() 
-       {
-            SearchProductForm searchProductForm = new SearchProductForm();
-            var resultName = ProductService.GetProductByName(searchProductForm.DataName);
+        public void ChangeProduct() 
+        {
+           
+            var resultName = ProductService.GetProductByName(DataChangeProduct.Name);
+
             int index;
-            if (int.TryParse(searchProductForm.DataCount.ToString(), out index))
+            if (int.TryParse(DataChangeProduct.Count.ToString(), out index))
             {
-             
+
                 MessageBox.Show(resultName[index].ToString());
 
             }
-           
-            string changedName = NameOfProduct;
+            MessageBox.Show(index.ToString());
+            string changedName = productName.Text;
             if (String.IsNullOrWhiteSpace(changedName))
             {
                 MessageBox.Show("Inccorect input, please, try again!");
@@ -114,6 +110,9 @@ namespace CRMApplications
                 }
             }
         }
-       
     }
+       
+       
+       
+    
 }

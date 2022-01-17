@@ -104,9 +104,9 @@ namespace CRMApplications
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button Search;
-        private System.Windows.Forms.ListView listView1;
+        public System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.VScrollBar vScrollBar1;
     }

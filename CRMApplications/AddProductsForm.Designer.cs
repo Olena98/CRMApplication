@@ -173,6 +173,7 @@ namespace CRMApplications
             this.MinimizeBox = false;
             this.Name = "AddProductsForm";
             this.Text = "AddProductsForm";
+            this.Load += new System.EventHandler(this.button1_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,7 +181,7 @@ namespace CRMApplications
 
         #endregion
 
-        private System.Windows.Forms.TextBox productName;
+        public System.Windows.Forms.TextBox productName;
         private System.Windows.Forms.TextBox productDescription;
         private System.Windows.Forms.Button productCreate;
         private System.Windows.Forms.Label label1;
