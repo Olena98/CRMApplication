@@ -86,8 +86,27 @@ namespace CRMApplications
              
         private void button1_Click(object sender, EventArgs e)
         {          
-            DataChangeProduct.Name = textBox1.Text;
-            DataChangeProduct.Count = listView1.SelectedIndices[0];
+            DataChangeProduct.NameOfProducts = textBox1.Text;
+            DataChangeProduct.CountOfProducts = listView1.SelectedIndices[0];
+            decimal price;
+            if (decimal.TryParse(textBox1.Text, out price))
+            {
+                DataChangeProduct.Price = price;
+            }            
+           
+            int number;
+            if (int.TryParse(textBox1.Text, out number))
+            {
+                DataChangeProduct.NumberOfProducts = number;
+               
+            }
+           
+            bool existence;
+            if (bool.TryParse(textBox1.Text, out existence))
+            {
+                DataChangeProduct.ExistenceOfProducts = existence;
+             
+            }
            
             AddProductsForm addProductsForm = new AddProductsForm();
              

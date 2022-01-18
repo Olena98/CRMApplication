@@ -8,7 +8,10 @@ namespace CRMApplications
 {
     static class DataChangeProduct
     {
-        public static string Name;
-        public static int Count;
+        public static string NameOfProducts;
+        public static int CountOfProducts;
+        public static decimal Price;
+        public static int NumberOfProducts;
+        public static bool ExistenceOfProducts;
     }
 }

@@ -106,6 +106,7 @@ namespace CRMApplications
                         {
                             var entry = new Product.ChangeEntry();
                             entry.ProductName = storyNode.Attributes["productName"].Value;
+                           
                             entry.ProductNumber = Convert.ToInt32(storyNode.Attributes["productNumber"].Value);
                             entry.Price = Convert.ToDecimal(storyNode.Attributes["price"].Value);
                             entry.Existence = Convert.ToBoolean(storyNode.Attributes["existence"].Value);
@@ -130,6 +131,7 @@ namespace CRMApplications
             {
                 var changeEntry = productNode.OwnerDocument.CreateElement("story");
                 changeEntry.SetAttribute("productName", entry.ProductName);
+                
                 changeEntry.SetAttribute("productNumber", entry.ProductNumber.ToString());
                 changeEntry.SetAttribute("price", entry.Price.ToString());
                 changeEntry.SetAttribute("existence", entry.Existence.ToString());
