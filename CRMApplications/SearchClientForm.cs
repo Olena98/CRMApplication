@@ -99,5 +99,11 @@ namespace CRMApplications
             }
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddClientsForm addClientsForm = new AddClientsForm();
+            addClientsForm.Show();
+        }
     }
 }

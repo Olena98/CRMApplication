@@ -74,9 +74,15 @@ namespace CRMApplications
 
             ClientService.AddNewClient(clients);
           
-
         }
 
-
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            ChangeClient();
+        }
+        public void ChangeClient() 
+        {
+        
+        }
     }
 }
