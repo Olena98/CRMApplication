@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CRMApplications
 {
-    class DataChangeClient
+    static class DataChangeClient
     {
         public static string NameOfClients;
         public static string SurnameOfClients;
