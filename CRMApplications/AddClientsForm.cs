@@ -87,11 +87,11 @@ namespace CRMApplications
             {
                 int index;
 
-                if (int.TryParse(DataChangeProduct.CountOfProducts.ToString(), out index))
+                if (int.TryParse(DataChangeClient.CountOfClients.ToString(), out index))
                 {
                     MessageBox.Show("Thank`s, your count: " + index);
                 }
-                string changedName = productName.Text;
+                string changedName = clientName.Text;
 
                 if (String.IsNullOrWhiteSpace(changedName))
                 {
@@ -99,18 +99,18 @@ namespace CRMApplications
                 }
                 else
                 {
-                    if (changedName == resultName[index].ProductName)
+                    if (changedName == resultName[index].ClientName)
                     {
-                        MessageBox.Show("You entered same name of the product.");
+                        MessageBox.Show("You entered same name of the client.");
                     }
                     else
                     {
-                        var newChangeEntry = new Product.ChangeEntry();
-                        newChangeEntry.ProductName = resultName[index].ProductName;
-                        resultName[index].ChangeEntries.Add(newChangeEntry);
-                        resultName[index].ProductName = changedName;
+                        var newChangeEntry = new Client.ChangeEntry();
+                        newChangeEntry.Name = resultName[index].ClientName;
+                        resultName[index].ChangesEntries.Add(newChangeEntry);
+                        resultName[index].ClientName = changedName;
 
-                        ProductsDataBase.SaveAllProducts();
+                        ClientsDataBase.SaveAllClient();
                     }
                 }
             }
