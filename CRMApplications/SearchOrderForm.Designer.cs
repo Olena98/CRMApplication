@@ -32,6 +32,7 @@ namespace CRMApplications
             this.listView1 = new System.Windows.Forms.ListView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.SearchOrders = new System.Windows.Forms.Button();
+            this.orderChange = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listView1
@@ -39,7 +40,7 @@ namespace CRMApplications
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(12, 132);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(298, 277);
+            this.listView1.Size = new System.Drawing.Size(298, 243);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.List;
@@ -61,11 +62,23 @@ namespace CRMApplications
             this.SearchOrders.UseVisualStyleBackColor = true;
             this.SearchOrders.Click += new System.EventHandler(this.SearchOrders_Click);
             // 
+            // orderChange
+            // 
+            this.orderChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.orderChange.Location = new System.Drawing.Point(94, 393);
+            this.orderChange.Name = "orderChange";
+            this.orderChange.Size = new System.Drawing.Size(147, 35);
+            this.orderChange.TabIndex = 3;
+            this.orderChange.Text = "Change order";
+            this.orderChange.UseVisualStyleBackColor = true;
+            this.orderChange.Click += new System.EventHandler(this.orderChange_Click);
+            // 
             // SearchOrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(322, 421);
+            this.ClientSize = new System.Drawing.Size(322, 440);
+            this.Controls.Add(this.orderChange);
             this.Controls.Add(this.SearchOrders);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.listView1);
@@ -81,5 +94,6 @@ namespace CRMApplications
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button SearchOrders;
+        private System.Windows.Forms.Button orderChange;
     }
 }

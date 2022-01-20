@@ -56,22 +56,26 @@ namespace CRMApplications
         }
         internal void OutputOrdersList(List<Order>orders)  
         {
-            if (orders.Count != 0)
+           
+            for (int i = 0; i < orders.Count; i++)
             {
-                MessageBox.Show("Count of orders: " + orders.Count);
-                foreach (var item in orders)
-                {
-                    listView1.Items.Add("Order date: " + item.OrderDate.ToString());
-                    listView1.Items.Add("Status: " + item.Status);
-                    listView1.Items.Add("Order number: " + item.OrderNumber.ToString());
-                    listView1.Items.Add("Client guid id: " + item.ClientGuid.ToString());
-                    listView1.Items.Add("Product guid id: " + item.ProductGuid.ToString());
-                    listView1.Items.Add("Client phone: " + item.ClientPhone.ToString());
-                    listView1.Items.Add("Guid: " + item.Id.ToString());
-                }
-            }
-            
+                listView1.Items.Add("Order №: " + i + "(" + orders[i].OrderDate + "," + orders[i].Status + orders[i].OrderNumber + ")");
+                listView1.Focus();
 
+            }
+
+        }
+
+        private void orderChange_Click(object sender, EventArgs e)
+        {
+            DataChangeOrder.CountOfOrders = listView1.SelectedIndices[0];
+            DateTime dateTime;
+            DateTime.TryParse(textBox1.Text, out dateTime);            
+            DataChangeOrder.DateOfOrders = dateTime;
+            Enum.TryParse(textBox1.Text, out Order.OrderStatus orderStatus);
+            DataChangeOrder.StatusOfOrders = orderStatus;
+            AddOrdersForm addOrdersForm = new AddOrdersForm();
+            addOrdersForm.Show();
         }
     }
 }
