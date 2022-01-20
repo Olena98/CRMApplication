@@ -15,6 +15,13 @@ namespace CRMApplications
         public string ClientPhone { get; set; }
         public Guid ClientGuid { get; set; }
         public Guid ProductGuid { get; set; }
+        public List<ChangeEntry> ChangesEntries { get; set; }
+        public class ChangeEntry
+        {
+            public DateTime Date { get; set; }
+            public OrderStatus Status { get; set; }
+        }
+
         public enum OrderStatus 
         {
             New,
