@@ -35,16 +35,17 @@ namespace CRMApplications
         }
         private static void AppendOrderNode(XmlNode parentNode, Order order)
         {
-            XmlElement productElem = parentNode.OwnerDocument.CreateElement("order");
-            productElem.SetAttribute("guid", order.Id.ToString());
-            productElem.SetAttribute("orderNumber", order.OrderNumber.ToString());
-            productElem.SetAttribute("orderStatus", order.Status.ToString());
-            productElem.SetAttribute("orderDate", order.OrderDate.ToString());
-            productElem.SetAttribute("clientPhone", order.ClientPhone);
-            productElem.SetAttribute("clientGuid", order.ClientGuid.ToString());
-            productElem.SetAttribute("productGuid", order.ProductGuid.ToString());
+            XmlElement orderElem = parentNode.OwnerDocument.CreateElement("order");
+            orderElem.SetAttribute("guid", order.Id.ToString());
+            orderElem.SetAttribute("orderNumber", order.OrderNumber.ToString());
+            orderElem.SetAttribute("orderStatus", order.Status.ToString());
+            orderElem.SetAttribute("orderDate", order.OrderDate.ToString());
+            orderElem.SetAttribute("clientPhone", order.ClientPhone);
+            orderElem.SetAttribute("clientGuid", order.ClientGuid.ToString());
+            orderElem.SetAttribute("productGuid", order.ProductGuid.ToString());
 
-            parentNode.AppendChild(productElem);
+            AddChangeEntriesNode(orderElem, order.ChangesEntries);
+            parentNode.AppendChild(orderElem);
         }
         public static List<Order> ReadXmlFile(string xmlPath)
         {
@@ -104,11 +105,40 @@ namespace CRMApplications
                     {
                         order.ProductGuid = Guid.Parse(attrProductGuid.Value);
                     }
+                    var changeEntries = new List<Order.ChangeEntry>();
+                    foreach (XmlNode storyNode in xnode.ChildNodes)
+                    {
+                        if (storyNode.Name.Equals("story"))
+                        {
+                            var entry = new Order.ChangeEntry();
+                            entry.Status = (Order.OrderStatus)Enum.Parse(typeof(Order.OrderStatus), storyNode.Attributes["status"].Value);
+                            entry.Date = DateTime.Parse(storyNode.Attributes["date"].Value);
+                            changeEntries.Add(entry);
+                        }
+                    }
+
+                    order.ChangesEntries = changeEntries;
 
                     orders.Add(order);
                 }
             }
             return orders;
+        }
+        public static void AddChangeEntriesNode(XmlNode orderNode, List<Order.ChangeEntry> entries)
+        {
+            if (entries == null || entries.Count == 0)
+            {
+                return;
+            }
+
+            foreach (var entry in entries)
+            {
+                var changeEntry = orderNode.OwnerDocument.CreateElement("story");
+                changeEntry.SetAttribute("date", entry.Date.ToString());
+                changeEntry.SetAttribute("status", entry.Status.ToString());
+                orderNode.AppendChild(changeEntry);
+            }
+
         }
     }
 }
