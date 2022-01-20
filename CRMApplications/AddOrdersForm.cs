@@ -30,14 +30,14 @@ namespace CRMApplications
             int ordersNumber;
             if (!int.TryParse(orderNumber.Text, out ordersNumber))
             {
-               order.OrderNumber = UniqueNumericNumberHelper.GetUniqueOrderNumericNumber();
-              
+                order.OrderNumber = UniqueNumericNumberHelper.GetUniqueOrderNumericNumber();
+
             }
-            else 
+            else
             {
                 order.OrderNumber = ordersNumber;
             }
-            
+
             order.Id = Guid.NewGuid();
             order.ClientGuid = Guid.Parse(textBox2.Text);
             order.ProductGuid = Guid.Parse(textBox1.Text);
@@ -52,17 +52,56 @@ namespace CRMApplications
             }
             if (Enum.TryParse(comboBox1.Text, out Order.OrderStatus status))
             {
-               
+
                 order.Status = status;
                 MessageBox.Show(status.ToString());
             }
             else
             {
                 order.Status = Order.OrderStatus.New;
-               
+
             }
             OrdersService.AddNewOrder(order);
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ChangeOrder();
+        }
+        public void ChangeOrder()
+        {
+            var resultStatus = OrdersService.GetOrdersByStatus(DataChangeOrder.StatusOfOrders);
+            if (OrdersService.GetOrdersByStatus(DataChangeOrder.StatusOfOrders).Count > 0)
+            {
+                int index;
+
+                if (int.TryParse(DataChangeClient.CountOfClients.ToString(), out index))
+                {
+                    MessageBox.Show("Thank`s, your count: " + index);
+                }
+
+                if (Enum.TryParse(comboBox1.Text, out Order.OrderStatus changedStatus))
+                {
+                    if (changedStatus == resultStatus[index].Status)
+                    {
+                        MessageBox.Show("You entered same status of the order.");
+                    }
+                    else
+                    {
+                        var newChangeEntry = new Order.ChangeEntry();
+                        newChangeEntry.Date = DateTime.Now;
+                        newChangeEntry.Status = resultStatus[index].Status;
+                        resultStatus[index].ChangesEntries.Add(newChangeEntry);
+
+                        resultStatus[index].Status = changedStatus;
+                        OrdersDataBase.SaveAllOrders();
+                    }
+
+                }
+
+            }
+        }
     }
 }
+
