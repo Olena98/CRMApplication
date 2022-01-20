@@ -37,15 +37,16 @@ namespace CRMApplications
         }
         private static void AppendClientNode(XmlNode parentNode, Client client)
         {
-            XmlElement productElem = parentNode.OwnerDocument.CreateElement("client");
-            productElem.SetAttribute("guid", client.Id.ToString());
-            productElem.SetAttribute("clientName", client.ClientName);
-            productElem.SetAttribute("clientSurname",client.ClientSurname);
-            productElem.SetAttribute("clientLastname", client.ClientLastname);
-            productElem.SetAttribute("clientPhone", client.PhoneNumber);
-            productElem.SetAttribute("clientEmail", client.Email);
+            XmlElement clientElem = parentNode.OwnerDocument.CreateElement("client");
+            clientElem.SetAttribute("guid", client.Id.ToString());
+            clientElem.SetAttribute("clientName", client.ClientName);
+            clientElem.SetAttribute("clientSurname",client.ClientSurname);
+            clientElem.SetAttribute("clientLastname", client.ClientLastname);
+            clientElem.SetAttribute("clientPhone", client.PhoneNumber);
+            clientElem.SetAttribute("clientEmail", client.Email);
 
-            parentNode.AppendChild(productElem);
+            AddChangeEntriesNode(clientElem, client.ChangesEntries);
+            parentNode.AppendChild(clientElem);
         }
         public static List<Client> ReadXmlFile(string xmlPath)
         {
@@ -100,11 +101,46 @@ namespace CRMApplications
                     {
                         client.Id = Guid.Parse(attrGuid.Value);
                     }
+                    var changeEntries = new List<Client.ChangeEntry>();
+                    foreach (XmlNode storyNode in xnode.ChildNodes)
+                    {
+                        if (storyNode.Name.Equals("story"))
+                        {
+                            var entry = new Client.ChangeEntry();
+                            entry.Name = storyNode.Attributes["name"].Value;
+                            entry.Surname = storyNode.Attributes["surname"].Value;
+                            entry.PhoneNumber = storyNode.Attributes["phonenumber"].Value;
+                            entry.Email = storyNode.Attributes["email"].Value;
+
+                            changeEntries.Add(entry);
+                        }
+                    }
+
+                    client.ChangesEntries = changeEntries;
 
                     clients.Add(client);
                 }
             }
             return clients;
+        }
+        public static void AddChangeEntriesNode(XmlNode orderNode, List<Client.ChangeEntry> entries)
+        {
+            if (entries == null || entries.Count == 0)
+            {
+                return;
+            }
+
+            foreach (var entry in entries)
+            {
+                var changeEntry = orderNode.OwnerDocument.CreateElement("story");
+                changeEntry.SetAttribute("name", entry.Name);
+                changeEntry.SetAttribute("surname", entry.Surname);
+                changeEntry.SetAttribute("phonenumber", entry.PhoneNumber);
+                changeEntry.SetAttribute("email", entry.Email);
+
+                orderNode.AppendChild(changeEntry);
+            }
+
         }
     }
 }

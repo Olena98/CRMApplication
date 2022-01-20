@@ -82,7 +82,38 @@ namespace CRMApplications
         }
         public void ChangeClient() 
         {
-        
+            var resultName = ClientService.GetClientByName(DataChangeClient.NameOfClients);
+            if (ClientService.GetClientByName(DataChangeClient.NameOfClients).Count > 0)
+            {
+                int index;
+
+                if (int.TryParse(DataChangeProduct.CountOfProducts.ToString(), out index))
+                {
+                    MessageBox.Show("Thank`s, your count: " + index);
+                }
+                string changedName = productName.Text;
+
+                if (String.IsNullOrWhiteSpace(changedName))
+                {
+                    MessageBox.Show("Inccorect input, please, try again!1");
+                }
+                else
+                {
+                    if (changedName == resultName[index].ProductName)
+                    {
+                        MessageBox.Show("You entered same name of the product.");
+                    }
+                    else
+                    {
+                        var newChangeEntry = new Product.ChangeEntry();
+                        newChangeEntry.ProductName = resultName[index].ProductName;
+                        resultName[index].ChangeEntries.Add(newChangeEntry);
+                        resultName[index].ProductName = changedName;
+
+                        ProductsDataBase.SaveAllProducts();
+                    }
+                }
+            }
         }
     }
 }

@@ -97,7 +97,7 @@ namespace CRMApplications
             DataChangeClient.SurnameOfClients = textBox1.Text;
             DataChangeClient.EmailOfClients = textBox1.Text;
             DataChangeClient.PhoneOfClients = textBox1.Text;
-
+            DataChangeClient.CountOfClients = listView1.SelectedIndices[0];
             AddClientsForm addClientsForm = new AddClientsForm();
             addClientsForm.Show();
         }

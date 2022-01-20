@@ -12,6 +12,7 @@ namespace CRMApplications
         public static string SurnameOfClients;
         public static string EmailOfClients;
         public static string PhoneOfClients;
+        public static int CountOfClients;
        
     }
 }
