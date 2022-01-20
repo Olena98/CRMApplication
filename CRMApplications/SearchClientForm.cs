@@ -83,25 +83,21 @@ namespace CRMApplications
            
         }
         internal void OutputClientList(List<Client> clients)
-        {
-            if (clients.Count != 0)
+        {         
+            for (int i = 0; i < clients.Count; i++)
             {
-                MessageBox.Show("Count of clients: " + clients.Count);
-                foreach (var item in clients)
-                {
-                    listView1.Items.Add("Client name: " + item.ClientName);
-                    listView1.Items.Add("Client surname: " + item.ClientSurname);
-                    listView1.Items.Add("Client lastname: " + item.ClientLastname);
-                    listView1.Items.Add("Client email: " + item.Email);
-                    listView1.Items.Add("Client phone: " + item.PhoneNumber);
-                    listView1.Items.Add("Guid: " + item.Id.ToString());
-                }
+                listView1.Items.Add("Client №: " + i + "(" + clients[i].ClientName + "," + clients[i].PhoneNumber + ")");
+                listView1.Focus();
             }
-
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            DataChangeClient.NameOfClients = textBox1.Text;
+            DataChangeClient.SurnameOfClients = textBox1.Text;
+            DataChangeClient.EmailOfClients = textBox1.Text;
+            DataChangeClient.PhoneOfClients = textBox1.Text;
+
             AddClientsForm addClientsForm = new AddClientsForm();
             addClientsForm.Show();
         }
