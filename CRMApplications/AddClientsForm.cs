@@ -187,6 +187,7 @@ namespace CRMApplications
                 {
                     MessageBox.Show("Thank`s, your count: " + index);
                 }
+                
                 string changedPhone = clientPhoneNumber.Text;
 
                 if (String.IsNullOrWhiteSpace(changedPhone))
