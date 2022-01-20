@@ -40,6 +40,7 @@ namespace CRMApplications
             this.productPrice = new System.Windows.Forms.MaskedTextBox();
             this.productNumber = new System.Windows.Forms.MaskedTextBox();
             this.checkBoxProductExistence = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // productName
@@ -59,7 +60,7 @@ namespace CRMApplications
             // productCreate
             // 
             this.productCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.productCreate.Location = new System.Drawing.Point(126, 252);
+            this.productCreate.Location = new System.Drawing.Point(58, 300);
             this.productCreate.Name = "productCreate";
             this.productCreate.Size = new System.Drawing.Size(93, 33);
             this.productCreate.TabIndex = 5;
@@ -140,11 +141,23 @@ namespace CRMApplications
             this.checkBoxProductExistence.TabIndex = 13;
             this.checkBoxProductExistence.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(193, 300);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(93, 33);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Change";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // AddProductsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(342, 316);
+            this.ClientSize = new System.Drawing.Size(342, 365);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.checkBoxProductExistence);
             this.Controls.Add(this.productNumber);
             this.Controls.Add(this.productPrice);
@@ -161,6 +174,7 @@ namespace CRMApplications
             this.MinimizeBox = false;
             this.Name = "AddProductsForm";
             this.Text = "AddProductsForm";
+            this.Load += new System.EventHandler(this.button1_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,7 +182,7 @@ namespace CRMApplications
 
         #endregion
 
-        private System.Windows.Forms.TextBox productName;
+        public System.Windows.Forms.TextBox productName;
         private System.Windows.Forms.TextBox productDescription;
         private System.Windows.Forms.Button productCreate;
         private System.Windows.Forms.Label label1;
@@ -179,5 +193,6 @@ namespace CRMApplications
         private System.Windows.Forms.MaskedTextBox productPrice;
         private System.Windows.Forms.MaskedTextBox productNumber;
         private System.Windows.Forms.CheckBox checkBoxProductExistence;
+        private System.Windows.Forms.Button button1;
     }
 }

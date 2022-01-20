@@ -61,6 +61,7 @@
     <Compile Include="Client.cs" />
     <Compile Include="ClientsDataBase.cs" />
     <Compile Include="ClientService.cs" />
+    <Compile Include="DataChangeProduct.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="OrdersDataBase.cs" />
     <Compile Include="OrdersService.cs" />
